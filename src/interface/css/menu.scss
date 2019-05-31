@@ -1,0 +1,156 @@
+#menu {
+   display: table-row;
+   height: 1px;
+
+   > .inner {
+      background: rgba(0, 0, 0, 0.185);
+      border-bottom: 1px solid rgba(2, 2, 2, 0.103);
+      display: table;
+      width: 100%;
+   }
+
+   > .inner > div { display: table-cell; }
+   > .inner > div:last-child { text-align: right; }
+
+   li {
+      background-color: rgba(0, 0, 0, 0);
+      display: inline-block;
+      padding: 10px;
+      color: #CECECE;
+      cursor: pointer;
+      text-shadow: 1px 1px #242424;
+      transition: 0.3s;
+   }
+
+   li:hover {
+      background-color: rgba(2, 2, 2, 0.151);
+      color: rgb(174, 248, 166);
+   }
+
+   .more {
+      background-image: url('../images/dropdown.png');
+      background-repeat: no-repeat;
+      background-position: right center;
+      padding-right: 30px;
+   }
+}
+
+#submenu {
+   background-color: rgb(41, 41, 41);
+   border: 1px solid rgba(36, 36, 36, 0.39);
+   position: absolute;
+   z-index: 98;
+   width: 220px;
+   text-transform: capitalize;
+
+   .item, .dead {
+      border-bottom: 1px solid rgb(36, 36, 36);
+      color: #CECECE;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+
+      .icon, .action {
+         width: 32px;
+         opacity: 0.6;
+         transition: 0.2s;
+      }
+
+      .icon {
+         border-right: 1px solid rgba(36, 36, 36, 0.829);
+      }
+
+      .action {
+         opacity: 0;
+      }
+
+      .header {
+         flex: 1;
+         padding: 7px 9px;
+      }
+
+      // RACE ICONS
+      #human { background: url('../images/icons/human.png'); }
+      #dwarf { background: url('../images/icons/dwarf.png'); }
+      #gnome { background: url('../images/icons/gnome.png'); }
+      #nelf { background: url('../images/icons/nelf.png'); }
+      #orc { background: url('../images/icons/orc.png'); }
+      #troll { background: url('../images/icons/troll.png'); }
+      #tauren { background: url('../images/icons/tauren.png'); }
+      #undead { background: url('../images/icons/undead.png'); }
+
+      // SPECIAL ICONS
+      #remove { background: url('../images/remove.png'); }
+      #donate { background: url('../images/icons/donate.png'); }
+      #references { background: url('../images/icons/references.png'); }
+      #settings { background: url('../images/icons/settings.png'); }
+      #report { background: url('../images/icons/report.png'); }
+      #preload { background: url('../images/icons/preload.png'); }
+      #import { background: url('../images/icons/import.png'); }
+      #import_profiles { background: url('../images/icons/import_profiles.png'); }
+      #export_profiles { background: url('../images/icons/export_profiles.png'); }
+   }
+
+   .item:hover {
+      background: rgba(194, 66, 194, 0.123);
+      cursor: pointer;
+      color: white;
+
+      .icon, .action {
+         opacity: 0.9;
+      }
+   }
+
+   .item::after, #dead::after {
+      content: "";
+      background: url('../images/bg.png');
+      opacity: 0.6;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;   
+   }
+
+   .dead {
+      border: 0px;
+      padding: 7px 9px;
+      cursor: default;
+   }
+
+   a {
+      display: block;
+      border-bottom: 1px solid rgb(36, 36, 36);
+   }
+
+   div:last-child, a:last-child { border-bottom: 0px; }
+
+   img {
+      border-right: 1px solid rgba(36, 36, 36, 0.829);
+      position: absolute;
+      opacity: 0.7;
+      left: 0px;
+      top: 0px;
+      pointer-events: none;
+   }
+
+   div:hover > img {
+      opacity: 1;
+      transition: 0.2s;
+   }
+
+   #loaded {
+      background-color: rgba(109, 255, 65, 0.096);
+      color: white;
+      cursor: default;
+
+      .icon {
+         opacity: 1;
+      }
+   }
+   
+   #loaded img { opacity: 1; }
+}

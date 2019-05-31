@@ -3,6 +3,8 @@ import React from 'react';
 import Map from './components/map';
 import Panel from './components/panel';
 
+import './interface/css/general.scss';
+
 function App() {
     return (
         <div id={ 'innerbody' }>

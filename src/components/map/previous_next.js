@@ -1,5 +1,4 @@
-import React from 'react';
-import { tsPropertySignature } from '@babel/types';
+import React, {useState, useEffect} from 'react';
 
 function PreviousNext(props) {
     const [local, setLocal] = useState({
@@ -24,33 +23,16 @@ function PreviousNext(props) {
 function Previous(props) {
     return (
         <PreviousNext type='previous' func={ props.func } visibility={ props.visibility } /> 
-    )
+    );
 }
 
 function Next(props) {
     return (
         <PreviousNext type='next' func={ props.func } visibility={ props.visibility } />
-    )
+    );
 }
 
-function Dialog(props) {
-  return (
-    <FancyBorder color="blue">
-      <h1 className="Dialog-title">
-        {props.title}
-      </h1>
-      <p className="Dialog-message">
-        {props.message}
-      </p>
-    </FancyBorder>
-  );
-}
-
-function WelcomeDialog() {
-  return (
-    <Dialog
-      title="Welcome"
-      message="Thank you for visiting our spacecraft!" />
-
-  );
+export {
+  Previous,
+  Next
 }

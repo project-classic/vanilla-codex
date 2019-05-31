@@ -1,0 +1,28 @@
+#innerbody {
+   display: table-row;
+
+   > .inner {
+      display: table;
+      height: 100%;
+      width: 100%;
+      padding: 6px;
+
+      #map-wrapper, #panel-wrapper {
+         display: table-cell;
+         border: 1px solid rgb(44, 44, 44);
+      }
+
+      #map-wrapper {
+         background: rgba(0, 0, 0, 0.274);
+         border-right: 0px;
+         overflow: hidden;
+         position: relative;
+      }
+
+      #panel-wrapper {
+         background: rgba(0, 0, 0, 0.185);
+         width: 20%;
+         min-width: 300px;
+      }
+   }
+}
