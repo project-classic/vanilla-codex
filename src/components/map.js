@@ -1,6 +1,8 @@
 import React from 'react';
 import {Previous, Next} from './map/previous_next'
 
+import '../interface/css/map.scss';
+
 function Map() {
     // style: {
     //     backgroundImage: 'url(' + require('../interface/images/maps/' + state.data.route[state.current].zone + '.jpg') + ')',
@@ -11,9 +13,13 @@ function Map() {
         <div>
             {/* <svg id={ 'map' } style={ local.style } onMouseDown={ movement.enable } onMouseUp={ movement.disable } onMouseLeave={ movement.disable } onMouseMove={ movement.moving }> */}
             <svg id={ 'map' } style={{backgroundImage: 'url(' + require('../interface/images/maps/barrens.jpg') + ')'}}>
-                <Previous visibility={ true } />
-                <Next visibility={ true }/>
             </svg>
+            <Previous visibility={ true } func={() => {
+                console.log('allo')
+            }}/>
+            <Next visibility={ true } func={() => {
+                console.log('next')
+            }}/>
             
 
         </div>
