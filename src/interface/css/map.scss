@@ -59,7 +59,7 @@
    }
 }
 
-#next, #previous {
+#next, #prev {
    background: rgba(0, 0, 0, 0.24);
    position: absolute;
    height: 100%;
@@ -69,12 +69,12 @@
    background-repeat: no-repeat;
    background-position: center center;
    top: 0px;
-   opacity: 1;
+   opacity: 0;
 }
 
 // ICONS COURTESY OF https://www.flaticon.com/authors/smashicons
 
-#previous {
+#prev {
    background-image: url('../images/prev.png');
    left: 0px;
 }

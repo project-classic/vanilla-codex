@@ -1,6 +1,6 @@
 import {sleep} from './util'
 
-function check() {
+function getProfiles() {
     const PROFILES_KEY = 'profiles'
 
     return new Promise((resolve, reject) => {
@@ -18,6 +18,5 @@ function check() {
 }
 
 export {
-    sleep,
-    check
+    getProfiles
 }

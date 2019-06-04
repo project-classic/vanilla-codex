@@ -3,12 +3,9 @@ import quests from '../resources/quests.json'
 
 function buildRoute() {
     return {
-        data: {
-            quests: quests,
-            route: route.path,
-            hearthstones: getHearthstones(route.path)
-        },
-        current: 0
+        quests: quests,
+        path: route.path,
+        hearthstones: getHearthstones(route.path)
     }
 }
 

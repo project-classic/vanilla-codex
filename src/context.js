@@ -1,15 +1,82 @@
 import React, { createContext, useReducer } from "react";
 // import { update, change } from "./funcs/storage";
 import Prompt from './components/prompt';
+import {getProfiles} from "./utils/storage";
+import {buildRoute} from "./utils/routeBuilder";
 
 // DECLARE CONTEXT
-const Context = createContext();
+const Context = createContext(undefined);
 
 // CONTEXT REDUCER
 function reducer(state, action) {
    switch (action.type) {
-      case 'next_step': {
-         console.log('next step')
+      case 'updateRouteStep': {
+         return {
+            ...state,
+            routeStep: action.payload
+         }
+      }
+
+       // LOAD PROFILE
+      case 'load': {
+         return {
+            ...state,
+            ...action.payload
+         }
+      }
+
+       // SHOW PROMPT WITH APPROPARIATE CONTENT
+      case 'show-prompt': {
+         return {
+            ...state,
+            prompt: {
+               visible: true,
+               type: action.payload
+            }
+         }
+      }
+
+       // HIDE PROMPT
+      case 'hide-prompt': {
+         return {
+            ...state,
+            prompt: {
+               ...state.prompt,
+               visible: false
+            }
+         }
+      }
+
+       // CURRENT LOADED PROFILE
+      case 'loaded': {
+         return {
+            ...state,
+            loaded: action.payload
+         }
+      }
+
+       // SHOW MESSAGE
+      case 'show-message': {
+         return {
+            ...state,
+            message: {
+               visible: true,
+               type: action.payload.type,
+               value: action.payload.value
+            }
+         }
+      }
+
+       // HIDE MESSAGE
+      case 'hide-message': {
+         return {
+            ...state,
+            message: {
+               visible: false,
+               type: undefined,
+               value: undefined
+            }
+         }
       }
 
       // FALLBACK
@@ -22,14 +89,18 @@ function reducer(state, action) {
 
 // CONTEXT PROVIDER
 function Provider({ children }) {
+   let profiles = null
 
-   // ATTACH THE REDUCER
+   getProfiles().then(loadedProfiles => {
+      profiles = loadedProfiles
+   })
+
    const [state, dispatch] = useReducer(reducer, {
-      data: null,
+      route: buildRoute(),
       routeStep: 0,
-      profiles: null,
+      profiles: profiles,
       prompt: {
-         visible: true,
+         visible: false,
          type: 'loading'
       },
       loaded: null,
@@ -38,16 +109,16 @@ function Provider({ children }) {
          type: undefined,
          value: undefined
       }
-   })
+   });
 
    return (
-      <Context.Provider value={{ state, dispatch }}>
-         <Prompt />
-         <div id="wrapper">
-            { children }
-         </div>
-      </Context.Provider>
-   )
+       <Context.Provider value={{state, dispatch}}>
+          <Prompt />
+          <div id="wrapper">
+             { children }
+          </div>
+       </Context.Provider>
+    )
 }
 
 export {

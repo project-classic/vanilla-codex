@@ -1,27 +1,21 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
-import Map from './components/map';
-import Panel from './components/panel';
-import {Provider} from './/context';
+import {Provider} from './context';
 
 import './interface/css/general.scss';
-import Init from "./init";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Main from "./pages/main";
 
 function App() {
     return (
-        <Provider>
-            <Init />
-                <div id={ 'innerbody' }>
-                    <div className={ 'inner' }>
-                        <div id={ 'map-wrapper' }>
-                            <Map />
-                        </div>
-                        <div id={ 'panel-wrapper' }>
-                            <Panel />
-                        </div>
-                    </div>
-                </div>
-        </Provider>
+        <BrowserRouter>
+            <Provider>
+                <Switch>
+                    <Route exact path={ '/' } component={ Main } />
+                    <Route component={ Error } />
+                </Switch>
+            </Provider>
+        </BrowserRouter>
     )
 }
 

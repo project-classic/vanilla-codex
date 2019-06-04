@@ -3,12 +3,13 @@ import React, {useContext, useEffect} from 'react'
 
 import '../interface/css/prompt.scss'
 import {Context} from "../context";
-import {sleep} from "../utils/storage";
+import {sleep} from "../utils/util";
 import CreateProfile from "./prompt/createProfile";
 import References from "./prompt/references";
 
 function Prompt() {
     const {state, dispatch} = useContext(Context)
+    console.log(state.route)
 
     useEffect(() => {
         if (state.prompt.visible) {
