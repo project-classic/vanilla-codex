@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import { update, change } from "./funcs/storage";
+// import { update, change } from "./funcs/storage";
 import Prompt from './components/prompt';
 
 // DECLARE CONTEXT
@@ -8,83 +8,8 @@ const Context = createContext();
 // CONTEXT REDUCER
 function reducer(state, action) {
    switch (action.type) {
-
-      // CHANGE BLOCK
-      case 'block': {
-
-         // CHANGE STORAGE CONTENT
-         change(state, action.payload);
-
-         return {
-            ...state,
-            current: action.payload
-         }
-      }
-
-      // LOAD PROFILE
-      case 'load': {
-         return {
-            ...state,
-            ...action.payload
-         }
-      }
-
-      // SET PROFILES ON INIT LOAD
-      case 'set_profiles': {
-         return {
-            ...state,
-            profiles: action.payload
-         }
-      }
-
-      // UPDATE PROFILES
-      case 'update_profiles': {
-
-         // UPDATE STORAGE
-         update(action.payload);
-         
-         return {
-            ...state,
-            profiles: action.payload
-         }
-      }
-
-      // SAVE RACE REQUEST DURING PROFILE CREATION
-      case 'selected_race': {
-         return {
-            ...state,
-            selected_race: action.payload
-         }
-      }
-
-      // SHOW PROMPT WITH APPROPARIATE CONTENT
-      case 'show-prompt': {
-         return {
-            ...state,
-            prompt: {
-               visible: true,
-               type: action.payload
-            }
-         }
-      }
-
-      // HIDE PROMPT
-      case 'hide-prompt': {
-         return {
-            ...state,
-            prompt: {
-               ...state.prompt,
-               visible: false
-            }
-         }
-      }
-
-      // CURRENT LOADED PROFILE
-      case 'loaded': {
-         return {
-            ...state,
-            loaded: action.payload
-         }
+      case 'next_step': {
+         console.log('next step')
       }
 
       // FALLBACK
@@ -101,15 +26,19 @@ function Provider({ children }) {
    // ATTACH THE REDUCER
    const [state, dispatch] = useReducer(reducer, {
       data: null,
-      current: 0,
+      routeStep: 0,
       profiles: null,
       prompt: {
-         visible: false,
-         type: null
+         visible: true,
+         type: 'loading'
       },
-      selected_race: null,
-      loaded: null
-   });
+      loaded: null,
+      message: {
+         visible: false,
+         type: undefined,
+         value: undefined
+      }
+   })
 
    return (
       <Context.Provider value={{ state, dispatch }}>
@@ -118,7 +47,7 @@ function Provider({ children }) {
             { children }
          </div>
       </Context.Provider>
-   );
+   )
 }
 
 export {
