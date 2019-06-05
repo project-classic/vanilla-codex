@@ -10,6 +10,7 @@ function Waypoint({waypoint, block}) {
 
     useEffect(() => {
         setLocal({
+            ...local,
             position: {
                 left: waypoint.coords.x + '%',
                 top: waypoint.coords.y + '%'
