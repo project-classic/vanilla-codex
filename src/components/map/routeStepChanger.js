@@ -11,7 +11,6 @@ function PreviousNext(props) {
     })
 
     useEffect(() => {
-        console.log(props.visibility)
         setLocal({
             style: {
                 opacity: props.visibility ? 1 : 0
@@ -40,7 +39,7 @@ function Previous({visibility}) {
     }
 
     return (
-        <PreviousNext type={'previous'} func={previous()} visibility={visibility} />
+        <PreviousNext type={'previous'} func={previous} visibility={visibility} />
     );
 }
 
@@ -52,7 +51,7 @@ function Next({visibility}) {
         const routeStep = state.routeStep + 1;
 
         // IF THERE IS ROOM TO MOVE
-        if (routeStep <= state.route.length - 1) {
+        if (routeStep <= state.route.path.length - 1) {
             dispatch({
                 type: 'updateRouteStep',
                 payload: routeStep
@@ -61,7 +60,7 @@ function Next({visibility}) {
     }
 
     return (
-        <PreviousNext type={'next'} func={next()} visibility={visibility} />
+        <PreviousNext type={'next'} func={next} visibility={visibility} />
     )
 }
 

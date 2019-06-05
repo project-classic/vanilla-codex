@@ -9,8 +9,6 @@ import '../interface/css/map.scss';
 import Markers from './map/markers';
 import {Next, Previous} from "./map/routeStepChanger";
 
-
-
 function Map() {
    // GLOBAL STATE
    const { state, dispatch } = useContext(Context);
@@ -85,7 +83,7 @@ function Map() {
 
    // ON INITIAL LOAD
    useEffect(() => {
-      updateResolution();
+      updateResolution()
    }, [state.profiles])
 
    // CHANGE POSITION
@@ -100,7 +98,9 @@ function Map() {
             ...local,
             lastPosition: position,
             style: {
-               backgroundImage: 'url(' + require('../interface/images/maps/' + state.route[state.routeStep].zone + '.jpg') + ')',
+               backgroundImage: 'url(' + require('../interface/images/maps/' + state.route.path[state.routeStep].zone + '.jpg') + ')',
+               // left: '50%',
+               // top:  '50%'
                left: position.x + 'px',
                top: position.y + 'px'
             }
@@ -109,19 +109,21 @@ function Map() {
    }, [local.resolution, state.routeStep, state.route.path[state.routeStep].zone])
 
    return (
-      <div onMouseOver={ toggleChangeStep() } onMouseOut={ toggleChangeStep() }>
+      <div onMouseOver={ toggleChangeStep } onMouseOut={ toggleChangeStep }>
          <EventListener
             target={ 'window' }
-            onResize={ updateResolution() }
+            onResize={ updateResolution }
          />
          <svg
             id={ 'map' }
             style={ local.style }
-            onMouseDown={ enableMovement() }
-            onMouseUp={ disableMovement() }
-            onMouseLeave={ disableMovement() }
-            onMouseMove={ updateMapPosition() }
-         ><Markers /></svg>
+            onMouseDown={ enableMovement }
+            onMouseUp={ disableMovement }
+            onMouseLeave={ disableMovement }
+            onMouseMove={ updateMapPosition }
+         >
+
+         </svg>
          <Previous visibility={local.showChangeStep} />
          <Next visibility={local.showChangeStep} />
       </div>

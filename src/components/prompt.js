@@ -9,7 +9,6 @@ import References from "./prompt/references";
 
 function Prompt() {
     const {state, dispatch} = useContext(Context)
-    console.log(state.route)
 
     useEffect(() => {
         if (state.prompt.visible) {

@@ -22,10 +22,10 @@ function Main() {
                 <EventListener target={document} onKeyDown={keyEvent} />
                 <Message />
                 <div className={ 'inner' }>
-                    <div id={ 'map-wrapper' }>
+                    <div id={'map-wrapper'}>
                         <Map />
                     </div>
-                    <div id={ 'panel-wrapper' }>
+                    <div id={'panel-wrapper'}>
                         <Panel />
                     </div>
                 </div>

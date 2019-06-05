@@ -9,8 +9,10 @@ const Context = createContext(undefined);
 
 // CONTEXT REDUCER
 function reducer(state, action) {
+   console.log('I am in the reducer')
    switch (action.type) {
       case 'updateRouteStep': {
+         console.log(action.payload)
          return {
             ...state,
             routeStep: action.payload
