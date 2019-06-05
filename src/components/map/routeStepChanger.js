@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 
-import '../../interface/css/map.scss';
+import '../../interface/css/map.css';
 import {Context} from "../../context";
 
 function PreviousNext(props) {

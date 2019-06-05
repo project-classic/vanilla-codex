@@ -1,0 +1,32 @@
+#map {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: 1fr;
+}
+
+#mapImage {
+    /*width: 1440px;*/
+    /*height: 960px;*/
+    transition: 0.2s;
+    grid-column: 2;
+    width: 100%;
+}
+
+#next, #previous {
+    background: rgba(0, 0, 0, 0.24) no-repeat center center;
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 1;
+}
+
+#previous {
+    background-image: url('../images/prev.png');
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#next {
+    background-image: url('../images/next.png');
+    grid-column: 3;
+    grid-row: 1;
+}

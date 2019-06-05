@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {Context} from "../context";
 import EventListener from "react-event-listener";
 
-import '../interface/css/innerbody.scss';
+import '../interface/css/main.css'
 
 import Message from "../components/message";
 import Map from "../components/map";
@@ -18,17 +18,11 @@ function Main() {
 
     if (state.route !== null) {
         return (
-            <div id={ 'innerbody' }>
+            <div id={'content'}>
                 <EventListener target={document} onKeyDown={keyEvent} />
                 <Message />
-                <div className={ 'inner' }>
-                    <div id={'map-wrapper'}>
-                        <Map />
-                    </div>
-                    <div id={'panel-wrapper'}>
-                        <Panel />
-                    </div>
-                </div>
+                <Map />
+                <Panel />
             </div>
         )
     } else {

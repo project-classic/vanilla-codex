@@ -4,6 +4,8 @@ import Prompt from './components/prompt';
 import {getProfiles} from "./utils/storage";
 import {buildRoute} from "./utils/routeBuilder";
 
+import './interface/css/main.css'
+
 // DECLARE CONTEXT
 const Context = createContext(undefined);
 
@@ -116,7 +118,7 @@ function Provider({ children }) {
    return (
        <Context.Provider value={{state, dispatch}}>
           <Prompt />
-          <div id="wrapper">
+          <div id={'container'}>
              { children }
           </div>
        </Context.Provider>

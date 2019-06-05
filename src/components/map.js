@@ -4,9 +4,8 @@ import { Context } from "../context";
 import EventListener from 'react-event-listener';
 import {dimensions, getPosition, getCenter} from "../utils/map";
 
-import '../interface/css/map.scss';
+import '../interface/css/map.css';
 
-import Markers from './map/markers';
 import {Next, Previous} from "./map/routeStepChanger";
 import RouteSteps from "./map/routeSteps";
 
@@ -118,13 +117,13 @@ function Map() {
    }, [local.resolution, state.route.path, state.routeStep])
 
    return (
-      <div onMouseOver={ enableChangeStep } onMouseOut={ disableChangeStep }>
+      <div id={'map'} onMouseOver={ enableChangeStep } onMouseOut={ disableChangeStep }>
          <EventListener
             target={ 'window' }
             onResize={ updateResolution }
          />
          <svg
-            id={ 'map' }
+            id={ 'mapImage' }
             style={ local.style }
             onMouseDown={ enableMovement }
             onMouseUp={ disableMovement }
