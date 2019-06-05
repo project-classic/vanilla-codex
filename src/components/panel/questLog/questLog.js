@@ -32,7 +32,7 @@ function QuestLog({visible}) {
     }, [state.routeStep, state.route])
 
     return (
-        <div id="quests" style={ local.visibility }>
+        <div id={'quests'} style={ local.visibility }>
             <div className="section">
                 <div className="title">
                     <div>Current Quests</div>

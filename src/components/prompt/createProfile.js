@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import EventListener from 'react-event-listener';
 
 import { Context } from "../../context";
-import {buildRoute, specific} from '../../utils/routeBuilder';
+import {buildRoute} from '../../utils/routeBuilder';
 
 function CreateProfile() {
 

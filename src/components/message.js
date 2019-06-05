@@ -36,7 +36,7 @@ function Message() {
             });
          });
       }
-   }, [state.message.visible]);
+   }, [dispatch, state.message.visible]);
 
    return (
       <div id={ 'message' }>

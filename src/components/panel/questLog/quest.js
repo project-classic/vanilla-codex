@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Quest({quest, quests}) {
-    function row() {
+    const row = () => {
+        console.log(quest)
         return (
             <Single header={quest} quests={quests} />
         )
@@ -9,7 +10,7 @@ function Quest({quest, quests}) {
 
     return (
         <div className={'quest'}>
-            {row}
+            {row()}
         </div>
     )
 }

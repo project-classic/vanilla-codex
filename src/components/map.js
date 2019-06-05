@@ -8,6 +8,7 @@ import '../interface/css/map.scss';
 
 import Markers from './map/markers';
 import {Next, Previous} from "./map/routeStepChanger";
+import RouteSteps from "./map/routeSteps";
 
 function Map() {
    // GLOBAL STATE
@@ -30,10 +31,17 @@ function Map() {
       })
    }
 
-   function toggleChangeStep() {
+   function enableChangeStep() {
       setLocal({
          ...local,
-         showChangeStep: !local.showChangeStep
+         showChangeStep: true
+      })
+   }
+
+   function disableChangeStep() {
+      setLocal({
+         ...local,
+         showChangeStep: false
       })
    }
 
@@ -59,7 +67,7 @@ function Map() {
    }
 
    function updateMapPosition(event) {
-      event.persist()
+      event.persist();
       if (local.movementEnabled) {
          const position = getPosition({
             event: event,
@@ -83,7 +91,8 @@ function Map() {
 
    // ON INITIAL LOAD
    useEffect(() => {
-      updateResolution()
+      console.log('also getting triggered')
+       updateResolution()
    }, [state.profiles])
 
    // CHANGE POSITION
@@ -106,10 +115,10 @@ function Map() {
             }
          })
       }
-   }, [local.resolution, state.routeStep, state.route.path[state.routeStep].zone])
+   }, [local.resolution, state.route.path, state.routeStep])
 
    return (
-      <div onMouseOver={ toggleChangeStep } onMouseOut={ toggleChangeStep }>
+      <div onMouseOver={ enableChangeStep } onMouseOut={ disableChangeStep }>
          <EventListener
             target={ 'window' }
             onResize={ updateResolution }
@@ -122,7 +131,7 @@ function Map() {
             onMouseLeave={ disableMovement }
             onMouseMove={ updateMapPosition }
          >
-
+         <RouteSteps />
          </svg>
          <Previous visibility={local.showChangeStep} />
          <Next visibility={local.showChangeStep} />

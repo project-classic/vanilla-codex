@@ -10,7 +10,7 @@ function Objectives({visible}) {
             display: 'block'
         },
         content: null
-    })
+    });
 
     useEffect(() => {
         setLocal({

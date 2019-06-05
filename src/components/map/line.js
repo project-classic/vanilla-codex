@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Line({ currentMarker, nextMarker, offColor}) {
-    if (next !== undefined) {
+function Line({ currentWaypoint, nextWaypoint, offColor}) {
+    if (nextWaypoint !== undefined) {
         return (
             <line
                 id= { offColor ? 'line-blue': null }
-                x1={ currentMarker.coords.x + '%' }
-                y1={ currentMarker.coords.y + '%' }
-                x2={ nextMarker.coords.x + '%' }
-                y2={ nextMarker.coords.y + '%' }
+                x1={ currentWaypoint.coords.x + '%' }
+                y1={ currentWaypoint.coords.y + '%' }
+                x2={ nextWaypoint.coords.x + '%' }
+                y2={ nextWaypoint.coords.y + '%' }
             />
         );
     } else {

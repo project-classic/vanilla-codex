@@ -1,53 +1,35 @@
-import React, {useContext, useState, useEffect} from 'react'
-import Context from '../../context';
-import Markers from '../../../../vanilla-questing/src/components/map/markers';
+import React, {useState, useEffect} from 'react'
 
-function Waypoint() {
-    const state = useContext(Context);
-
+function Waypoint({waypoint, block}) {
     const [local, setLocal] = useState({
-        content: null
+        position: {},
+        alignment: null,
+        number: null,
+        space: null
     })
 
-    const whitelist = new Set([
-        'barrens',
-        'stonetalon',
-        'orgrimmar',
-        'azshara',
-        'badlands',
-        'blasted',
-        'darnassus',
-        'durotar',
-        'ironforge',
-        'needles',
-        'redridge',
-        'stormwind',
-        'tanaris',
-        'westfall', 
-    ])
-
     useEffect(() => {
-        const markers = state.data.route[state.current].markers
-        const offColor = whitelist.has(state.data.route[state.current].zone);
-
         setLocal({
-            content: markers.map((marker, index) =>
-                <React.Fragment key={index}>
-                    <Line
-                        current={waypoint}
-                        next={waypoints[index + 1]}
-                        offColor={offColor}
-                    />
-                    <Marker
-                        waypoint={marker}
-                        block={index}
-                    />
-                </React.Fragment>
-            )
+            position: {
+                left: waypoint.coords.x + '%',
+                top: waypoint.coords.y + '%'
+            },
+            alignment: (waypoint.align === undefined) ? 'right' : waypoint.align,
+            number: require('../../interface/images/numbers/' + (block + 1) + '.png'),
+            space: require('../../interface/images/waypoints/space.png'),
         })
-    }, [state.current, state.data])
+    }, [waypoint, block])
 
-    return local.content
+    return (
+        <foreignObject width={'100%'} height={'100%'}>
+            <div className={'waypoint'} style={local.position}>
+                <img src={local.space} id={'quest'} alt={''} />
+                <span id={local.alignment}>
+                    <img src={local.number} alt={''} />
+                </span>
+            </div>
+        </foreignObject>
+    )
 }
 
-export default Waypoints;
+export default Waypoint

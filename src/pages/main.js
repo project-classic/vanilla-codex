@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {Context, Provider} from "../context";
+import {Context} from "../context";
 import EventListener from "react-event-listener";
 
 import '../interface/css/innerbody.scss';
@@ -9,7 +9,7 @@ import Map from "../components/map";
 import Panel from "../components/panel";
 
 function Main() {
-    const {state, dispatch} = useContext(Context)
+    const {state} = useContext(Context)
 
     function keyEvent(event) {
         console.log('event happened')
