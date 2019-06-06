@@ -22,8 +22,8 @@ function Main() {
                 <EventListener target={document} onKeyDown={keyEvent} />
                 <Message />
                 <Map />
-                <Panel />
-            </div>
+                <Panel/>
+           </div>
         )
     } else {
         return null

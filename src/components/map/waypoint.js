@@ -24,11 +24,15 @@ function Waypoint({waypoint, block}) {
     return (
         <foreignObject width={'100%'} height={'100%'}>
             <div className={'waypoint'} style={local.position}>
-                <img src={local.space} id={'quest'} alt={''} />
-                <span id={local.alignment}>
-                    <img src={local.number} alt={''} />
-                </span>
+                <img src={local.number} className={'waypointNumber'} />
             </div>
+
+            {/*<div className={'waypoint'} style={local.position}>*/}
+            {/*    <img src={local.space} id={'quest'} alt={''} />*/}
+            {/*    <span id={local.alignment}>*/}
+            {/*        <img src={local.number} className={'waypointNumber'} alt={''} />*/}
+            {/*    </span>*/}
+            {/*</div>*/}
         </foreignObject>
     )
 }

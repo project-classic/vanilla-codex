@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 
 
-import '../interface/css/prompt.scss'
+// import '../interface/css/prompt.scss'
 import {Context} from "../context";
 import {sleep} from "../utils/util";
 import CreateProfile from "./prompt/createProfile";

@@ -9,15 +9,18 @@
                 {  
                    "type":"accept",
                    "quest":"your place in the world",
+                   "id": "4641",
                    "description":""
                 },
                 {  
                    "type":"complete",
                    "quest":"your place in the world",
+                   "id": "4641",
                    "description":""
                 },
                 {  
                    "type":"accept",
+                   "id": "788",
                    "quest":"cutting teeth",
                    "description":""
                 }

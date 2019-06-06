@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Provider} from './context';
 
-import './interface/css/general.scss';
+import './interface/css/main.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "./pages/main";
 import Menu from "./components/menu";

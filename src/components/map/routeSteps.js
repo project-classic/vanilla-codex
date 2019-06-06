@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import Line from "./line";
 import Waypoint from "./waypoint";
 import {Context} from "../../context";
+import Marker from "./markers";
 
 function RouteSteps() {
     const {state} = useContext(Context)
@@ -37,12 +38,13 @@ function RouteSteps() {
                 <React.Fragment key={index}>
                     <Line currentWaypoint={waypoint} nextWaypoint={waypoints[index + 1]} offColor={offColor} />
                     <Waypoint waypoint={waypoint} block={index} />
+                    <Marker />
                 </React.Fragment>
             )
         })
-    }, [state.routeStep, state.route])
+    }, [state.routeStep, state.route]);
 
-    return local.content
+    return local.content;
 }
 
 export default RouteSteps

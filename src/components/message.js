@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Context } from "../context";
 
 import { sleep } from "../utils/util";
-import '../interface/css/message.scss';
+import '../interface/css/message.css';
 
 function Message() {
 

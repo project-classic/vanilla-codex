@@ -124,7 +124,7 @@ function getPosition({ event, lastEvent, lastPosition, resolution }) {
 
 // CALCULATE SELECTOR DIMENSIONS
 function dimensions() {
-   const wrapper = document.getElementById('map');
+   const wrapper = document.getElementById('map-wrapper');
 
    return {
       width: wrapper.clientWidth,

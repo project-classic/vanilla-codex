@@ -11,13 +11,18 @@ const Context = createContext(undefined);
 
 // CONTEXT REDUCER
 function reducer(state, action) {
-   console.log('I am in the reducer')
    switch (action.type) {
       case 'updateRouteStep': {
-         console.log(action.payload)
          return {
             ...state,
             routeStep: action.payload
+         }
+      }
+
+      case 'selectWaypoint': {
+         return {
+            ...state,
+            selectedWaypoint: action.payload
          }
       }
 
@@ -53,9 +58,10 @@ function reducer(state, action) {
 
        // CURRENT LOADED PROFILE
       case 'loaded': {
+         console.log('loaded')
          return {
             ...state,
-            loaded: action.payload
+            loaded: !state.loaded
          }
       }
 
@@ -102,6 +108,7 @@ function Provider({ children }) {
    const [state, dispatch] = useReducer(reducer, {
       route: buildRoute(),
       routeStep: 0,
+      selectedWaypoint: buildRoute().path[0].waypoints[0],
       profiles: profiles,
       prompt: {
          visible: false,

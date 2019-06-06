@@ -28,6 +28,11 @@ function Map() {
          ...local,
          resolution: dimensions()
       })
+
+       dispatch({
+           type: 'loaded',
+           payload: true
+       })
    }
 
    function enableChangeStep() {
@@ -88,42 +93,39 @@ function Map() {
       }
    }
 
-   // ON INITIAL LOAD
+   //ON INITIAL LOAD
    useEffect(() => {
-      console.log('also getting triggered')
        updateResolution()
    }, [state.profiles])
 
    // CHANGE POSITION
    useEffect(() => {
-      if (local.resolution !== null) {
-         const position = getCenter({
-            waypoints: state.route.path[state.routeStep].waypoints,
-            resolution: local.resolution
-         })
+        const position = getCenter({
+         waypoints: state.route.path[state.routeStep].waypoints,
+         resolution: dimensions()
+        })
 
-         setLocal({
-            ...local,
-            lastPosition: position,
-            style: {
-               backgroundImage: 'url(' + require('../interface/images/maps/' + state.route.path[state.routeStep].zone + '.jpg') + ')',
-               // left: '50%',
-               // top:  '50%'
-               left: position.x + 'px',
-               top: position.y + 'px'
-            }
-         })
-      }
-   }, [local.resolution, state.route.path, state.routeStep])
+        setLocal({
+         ...local,
+         lastPosition: position,
+         style: {
+            backgroundImage: 'url(' + require('../interface/images/maps/' + state.route.path[state.routeStep].zone + '.jpg') + ')',
+            // left: '50%',
+            // top:  '50%'
+            left: position.x + 'px',
+            top: position.y + 'px'
+         }
+        })
+   }, [local.resolution, state.route.path, state.routeStep, state.profiles])
 
    return (
-      <div id={'map'} onMouseOver={ enableChangeStep } onMouseOut={ disableChangeStep }>
+      <div id={'map-wrapper'} onMouseOver={ enableChangeStep } onMouseOut={ disableChangeStep }>
          <EventListener
-            target={ 'window' }
-            onResize={ updateResolution }
+             target={ 'window' }
+             onResize={ updateResolution}
          />
          <svg
-            id={ 'mapImage' }
+            id={ 'map' }
             style={ local.style }
             onMouseDown={ enableMovement }
             onMouseUp={ disableMovement }
