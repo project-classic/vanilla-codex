@@ -35,10 +35,12 @@
             {
               "type": "quest",
               "quest": "cutting teeth",
+              "id": "788",
               "description": "Don't have to complete it now"
             },
             {
               "type": "accept",
+              "id": "790",
               "quest": "sarkoth",
               "description": ""
             }

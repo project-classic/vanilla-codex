@@ -38,8 +38,8 @@ function Steps() {
                 <React.Fragment key={index}>
                     <Line currentWaypoint={waypoint} nextWaypoint={waypoints[index + 1]} offColor={offColor}/>
                     <foreignObject width={'100%'} height={'100%'}>
-                        <Waypoint waypoint={waypoint} block={index}/>
                         <Markers/>
+                        <Waypoint waypoint={waypoint} block={index}/>
                     </foreignObject>
                 </React.Fragment>
             )

@@ -8,7 +8,7 @@ import items from '../../../resources/items'
 import '../../../interface/css/guide/map/markers.css'
 
 function Markers() {
-    const colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363",
+    const colors = ["#1bc63e", "#E94F37", "#1C89BF", "#A1D363",
         "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
 
     const {state} = useContext(Context);
@@ -47,8 +47,8 @@ function Markers() {
                             units[quests[objective.id].start.id].locations.forEach(location => {
                                 //TODO: CHECK IF IN THE SAME ZONE
                                 content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                colorIndex++
                             })
+                            colorIndex++
                             break
                         }
 
@@ -56,8 +56,8 @@ function Markers() {
                             objects[quests[objective.id].start.id].locations.forEach(location => {
                                 //TODO: CHECK THE ZONE
                                 content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                colorIndex++
                             })
+                            colorIndex++
                             break
                         }
 
@@ -65,15 +65,15 @@ function Markers() {
                             items[quests[objective.id].start.id].npcs.forEach(npc => {
                                 units[npc].locations.forEach(location => {
                                     content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                    colorIndex++
                                 })
+                                colorIndex++
                             })
 
                             items[quests[objective.id].start.id].objects.forEach(object => {
                                 objects[object].locations.forEach(location => {
                                     content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                    colorIndex++
                                 })
+                                colorIndex++
                             })
                             break
                         }
@@ -86,8 +86,8 @@ function Markers() {
                         case 'npc': {
                             units[quests[objective.id].end.id].locations.forEach(location => {
                                 content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                colorIndex++
                             })
+                            colorIndex++
                             break
                         }
 
@@ -95,8 +95,8 @@ function Markers() {
                             objects[quests[objective.id].end.id].locations.forEach(location => {
                                 //TODO: CHECK THE ZONE
                                 content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
-                                colorIndex++
                             })
+                            colorIndex++
                             break
                         }
                     }
@@ -108,33 +108,33 @@ function Markers() {
                         switch (objective.type) {
                             case 'npc': {
                                 units[objective.id].locations.forEach(location => {
-                                    content.push(<Circle position={getPosition(location)} color={colors[colorIndex]}/>)
-                                    colorIndex++
+                                    content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
                                 })
+                                colorIndex++
                                 break
                             }
 
                             case 'object': {
                                 objects[objective.id].locations.forEach(location => {
-                                    content.push(<Circle position={getPosition(location)} color={colors[colorIndex]}/>)
-                                    colorIndex++
+                                    content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
                                 })
+                                colorIndex++
                                 break
                             }
 
                             case 'item': {
                                 items[objective.id].npcs.forEach(npc => {
                                     units[npc].locations.forEach(location => {
-                                        content.push(<Circle position={getPosition(location)} color={colors[colorIndex]}/>)
-                                        colorIndex++
+                                        content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
                                     })
+                                    colorIndex++
                                 })
 
                                 items[objective.id].objects.forEach(object => {
                                     objects[object].locations.forEach(location => {
-                                        content.push(<Circle position={getPosition(location)} color={colors[colorIndex]}/>)
-                                        colorIndex++
+                                        content.push(<Circle key={content.length} position={getPosition(location)} color={colors[colorIndex]}/>)
                                     })
+                                    colorIndex++
                                 })
                                 break
                             }
