@@ -2,11 +2,11 @@ import React from 'react'
 
 function Quest({quest, quests}) {
     const row = () => {
-        console.log(quest)
+        console.log(quest);
         return (
-            <Single header={quest} quests={quests} />
+            <Single header={quest} quests={quests}/>
         )
-    }
+    };
 
     return (
         <div className={'quest'}>

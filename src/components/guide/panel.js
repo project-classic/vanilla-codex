@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import '../interface/css/panel.scss'
+import '../../interface/css/guide/panel.css'
 
 import Tab from "./panel/tab";
 import Objectives from "./panel/objectives/objectives";
@@ -11,7 +11,7 @@ function Panel() {
     const [local, setLocal] = useState({
         objectives: true,
         quests: false
-    })
+    });
 
     function toggle() {
         setLocal({
@@ -19,19 +19,20 @@ function Panel() {
             quests: !local.quests
         })
     }
+
     return (
         <div id={'panel'}>
             <div id={'status'}>
-                <Hearthstone />
+                <Hearthstone/>
                 <div id={'panel-menu'} className={'split'}>
-                    <Tab label={'Objectives'} func={toggle} selected={local.objectives} />
-                    <Tab label={'Quests'} func={toggle} selected={local.quests} />
+                    <Tab label={'Objectives'} func={toggle} selected={local.objectives}/>
+                    <Tab label={'Quests'} func={toggle} selected={local.quests}/>
                 </div>
             </div>
             <div id={'logs'}>
                 <div id={'overflow-fix'}>
-                    <Objectives visible={local.objectives} />
-                    <QuestLog visible={local.quests} />
+                    <Objectives visible={local.objectives}/>
+                    <QuestLog visible={local.quests}/>
                 </div>
             </div>
         </div>

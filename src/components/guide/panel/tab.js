@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 function Tab({selected, func, label}) {
     const [local, setLocal] = useState({
         style: null
-    })
+    });
 
     useEffect(() => {
         setLocal({
             style: selected ? 'current' : null
         })
-    }, [selected])
+    }, [selected]);
 
     return (
         <div id={'objectives'} onClick={func} className={local.style}>

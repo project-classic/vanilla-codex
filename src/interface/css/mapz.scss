@@ -1,84 +1,117 @@
 #map {
-   width: 1440px;
-   height: 960px;
-   position: absolute;
-   transition: 0.2s;
+  width: 1440px;
+  height: 960px;
+  position: absolute;
+  transition: 0.2s;
 
-   line {
-      stroke-width: 4px;
-      stroke: red;
-      opacity: 0.9;
-      //stroke-dasharray: 5,5;
-   }
+  line {
+    stroke-width: 4px;
+    stroke: red;
+    opacity: 0.9;
+    //stroke-dasharray: 5,5;
+  }
 
-   #line-blue {
-      stroke: rgb(11, 39, 73);
-   }
-   
-   foreignobject {
-      width: 100%;
-      height: 100%;
-      z-index: 10;
-   }
+  #line-blue {
+    stroke: rgb(11, 39, 73);
+  }
 
-   .waypoint {
+  foreignobject {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .waypoint {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+
+    span {
+      background: rgba(0, 0, 0, 0.76);
       position: absolute;
-      width: 1px;
-      height: 1px;
+      pointer-events: none;
+      padding: 1px;
+      border-radius: 25%;
+      opacity: 1;
+    }
 
-      span {
-         background: rgba(0, 0, 0, 0.76);
-         position: absolute;
-         pointer-events: none;
-         padding: 1px;
-         border-radius: 25%;
-         opacity: 1;
-      }
+    // NUMBER ALIGNMENT
+    #left {
+      position: absolute;
+      left: -20px;
+      top: -6px;
+    }
 
-      // NUMBER ALIGNMENT
-      #left { position: absolute; left: -20px; top: -6px; }
-      #right { position: absolute; left: 10px; top: -6px; }
-      #top { position: absolute; left: -5px; top: -21px; }
-      #bottom { position: absolute; left: -5px; top: 10px; }
-   
-      #quest,
-      #travel,
-      #objective,
-      #flightpath,
-      #hub {
-         position: relative;
-         left: -5px;
-         top: -5px;
-      }
-   
-      #quest  { background: url('../images/waypoints/yellow.png'); }
-      #travel { background: url('../images/waypoints/purple.png'); }
-      #objective { background: url('../images/waypoints/red.png'); }
-      #flightpath { background: url('../images/waypoints/green.png'); }
-      #hub { background: url('../images/waypoints/blue.png'); }
-   }
+    #right {
+      position: absolute;
+      left: 10px;
+      top: -6px;
+    }
+
+    #top {
+      position: absolute;
+      left: -5px;
+      top: -21px;
+    }
+
+    #bottom {
+      position: absolute;
+      left: -5px;
+      top: 10px;
+    }
+
+    #quest,
+    #travel,
+    #objective,
+    #flightpath,
+    #hub {
+      position: relative;
+      left: -5px;
+      top: -5px;
+    }
+
+    #quest {
+      background: url('../images/waypoints/yellow.png');
+    }
+
+    #travel {
+      background: url('../images/waypoints/purple.png');
+    }
+
+    #objective {
+      background: url('../images/waypoints/red.png');
+    }
+
+    #flightpath {
+      background: url('../images/waypoints/green.png');
+    }
+
+    #hub {
+      background: url('../images/waypoints/blue.png');
+    }
+  }
 }
 
 #next, #previous {
-   background: rgba(0, 0, 0, 0.24);
-   position: absolute;
-   height: 100%;
-   transition: 0.2s;
-   cursor: pointer;
-   background-repeat: no-repeat;
-   background-position: center center;
-   top: 0px;
-   opacity: 0;
+  background: rgba(0, 0, 0, 0.24);
+  position: absolute;
+  height: 100%;
+  transition: 0.2s;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0px;
+  opacity: 0;
 }
 
 // ICONS COURTESY OF https://www.flaticon.com/authors/smashicons
 
 #previous {
-   background-image: url('../images/prev.png');
-   left: 0px;
+  background-image: url('../images/prev.png');
+  left: 0px;
 }
 
 #next {
-   background-image: url('../images/next.png');
-   right: 0px;
+  background-image: url('../images/next.png');
+  right: 0px;
 }

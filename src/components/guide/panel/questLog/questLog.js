@@ -1,15 +1,15 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {Context} from "../../../context";
-import getQuestLog from "../../../utils/quests";
+import getQuestLog from "../../../../utils/quests";
 import Quest from "./quest";
 
 function QuestLog({visible}) {
-    const {state} = useContext(Context)
+    const {state} = useContext(Context);
 
     const [local, setLocal] = useState({
         visibility: null,
         content: []
-    })
+    });
 
     useEffect(() => {
         setLocal({
@@ -18,27 +18,27 @@ function QuestLog({visible}) {
                 display: visible ? 'block' : 'none'
             }
         })
-    }, [visible])
+    }, [visible]);
 
     useEffect(() => {
-        const quests = getQuestLog(state.route, state.routeStep)
+        const quests = getQuestLog(state.route, state.currentStep);
 
         setLocal({
             ...local,
             content: quests.map((quest, index) =>
-                <Quest key={index} quest={quest} quests={state.route.quests} />
+                <Quest key={index} quest={quest} quests={state.route.quests}/>
             )
         })
-    }, [state.routeStep, state.route])
+    }, [state.currentStep, state.route]);
 
     return (
-        <div id={'quests'} style={ local.visibility }>
+        <div id={'quests'} style={local.visibility}>
             <div className="section">
                 <div className="title">
                     <div>Current Quests</div>
-                    <div>{ local.content.length } / 20</div>
+                    <div>{local.content.length} / 20</div>
                 </div>
-                { local.content }
+                {local.content}
             </div>
         </div>
     )

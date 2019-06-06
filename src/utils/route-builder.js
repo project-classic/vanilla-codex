@@ -10,20 +10,20 @@ function buildRoute() {
 }
 
 function getHearthstones(route) {
-    const container = []
+    const container = [];
 
-    route.forEach((routeStep, index) => {
-        routeStep.waypoints.forEach(waypoint => {
+    route.forEach((currentStep, index) => {
+        currentStep.waypoints.forEach(waypoint => {
             waypoint.objectives.forEach(objective => {
                 if (objective.type === 'note' && objective.description.toLowerCase() === 'set hearthstone') {
                     container.push({
-                        routeStep: index,
-                        zone: routeStep.zone
+                        currentStep: index,
+                        zone: currentStep.zone
                     })
                 }
             })
         })
-    })
+    });
 
     return container
 }

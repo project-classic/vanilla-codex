@@ -5,14 +5,14 @@
     position: absolute;
 }
 
-#map>line {
+#map > line {
     stroke-width: 3px;
     stroke: red;
     opacity: 0.9;
     /*stroke-dasharray: 5,5;*/
 }
 
-#line-blue {
+#map > #line-blue {
     stroke: rgb(11, 39, 73);
 }
 
@@ -28,7 +28,7 @@ foreignObject {
     height: 1px;
 }
 
-.waypoint>span {
+.waypoint > span {
     background: rgba(0, 0, 0, 0.76);
     position: absolute;
     pointer-events: none;
@@ -46,16 +46,35 @@ foreignObject {
     display: block;
 }
 
-#left { position: absolute; left: -20px; top: -6px; }
-#right { position: absolute; left: 10px; top: -4px; }
-#top { position: absolute; left: -5px; top: -21px; }
-#bottom { position: absolute; left: -5px; top: 10px; }
+#left {
+    position: absolute;
+    left: -20px;
+    top: -6px;
+}
+
+#right {
+    position: absolute;
+    left: 10px;
+    top: -4px;
+}
+
+#top {
+    position: absolute;
+    left: -5px;
+    top: -21px;
+}
+
+#bottom {
+    position: absolute;
+    left: -5px;
+    top: 10px;
+}
 
 #quest {
     position: relative;
     left: -5px;
     top: -5px;
-    background: url('../images/waypoints/yellow.png');
+    background: url('../../images/waypoints/yellow.png');
 }
 
 #map-wrapper {
@@ -77,11 +96,11 @@ foreignObject {
 }
 
 #previous {
-    background-image: url('../images/prev.png');
+    background-image: url('../../images/prev.png');
     left: 0;
 }
 
 #next {
-    background-image: url('../images/next.png');
+    background-image: url('../../images/next.png');
     right: 0;
 }

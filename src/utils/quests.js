@@ -1,8 +1,8 @@
-function getQuestLog(route, routeStep) {
-    const container = new Map()
+function getQuestLog(route, currentStep) {
+    const container = new Map();
 
-    for (let x = 0; x < routeStep; x++) {
-        const waypoints = route.path[x].waypoints
+    for (let x = 0; x < currentStep; x++) {
+        const waypoints = route.path[x].waypoints;
 
         waypoints.forEach(waypoint => {
             waypoint.objectives.forEach(objective => {
@@ -10,7 +10,7 @@ function getQuestLog(route, routeStep) {
                     container.delete(objective.quest)
                 }
 
-                if (objective.type ==='accept') {
+                if (objective.type === 'accept') {
                     container.set(objective.quest, objective.quest)
                 }
 

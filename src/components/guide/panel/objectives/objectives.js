@@ -1,9 +1,9 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {Context} from "../../../context";
 import Objective from "./objective";
 
 function Objectives({visible}) {
-    const {state} = useContext(Context)
+    const {state} = useContext(Context);
 
     const [local, setLocal] = useState({
         visibility: {
@@ -19,16 +19,16 @@ function Objectives({visible}) {
                 display: visible ? 'block' : 'none'
             }
         })
-    }, [visible])
+    }, [visible]);
 
     useEffect(() => {
         setLocal({
             ...local,
-            content: state.route.path[state.routeStep].waypoints.map((waypoint, index) =>
-                <Objective key={index} index={index} waypoint={waypoint} quests={state.route.quests} />
+            content: state.route.path[state.currentStep].waypoints.map((waypoint, index) =>
+                <Objective key={index} index={index} waypoint={waypoint} quests={state.route.quests}/>
             )
         })
-    }, [state.routeStep, state.route])
+    }, [state.currentStep, state.route]);
 
     return (
         <div id={'objectives'} style={local.visibility}>

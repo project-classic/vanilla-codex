@@ -1,21 +1,19 @@
-import React, {useState, useContext} from 'react'
-
-import units from '../../../resources/units'
+import React, {useContext, useState} from 'react'
 import {Context} from "../../../context";
 
 function Objective({index, quests, waypoint}) {
-    const {state, dispatch} = useContext(Context)
+    const {state, dispatch} = useContext(Context);
 
     const [local, setLocal] = useState({
         style: null
-    })
+    });
 
     function content() {
-        let content = []
+        let content = [];
 
         waypoint.objectives.forEach((objective, index) => {
             content.push(do_some_shit(objective, index))
-        })
+        });
 
         return content
     }
@@ -30,7 +28,7 @@ function Objective({index, quests, waypoint}) {
         } else {
             return (
                 <div key={index} className={objective.type}>
-                    <Single questName={objective.quest} description={objective.description} />
+                    <Single questName={objective.quest} description={objective.description}/>
                 </div>
             )
         }
@@ -40,7 +38,7 @@ function Objective({index, quests, waypoint}) {
         dispatch({
             type: 'selectWaypoint',
             payload: waypoint
-        })
+        });
         setLocal({
             ...local,
             style: {
