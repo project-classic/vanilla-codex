@@ -28,6 +28,14 @@ function Steps() {
         'westfall',
     ]);
 
+    function some_shit(waypoints, offColor) {
+        let content = []
+        waypoints.forEach((waypoint, index) => {
+            content.push(<Line currentWaypoint={waypoint} nextWaypoint={waypoint[index + 1]} offColor={offColor}/>)
+            content.
+        })
+    }
+
     useEffect(() => {
         const waypoints = state.route.path[state.currentStep].waypoints;
         const offColor = blueLineZones.has(state.route.path[state.currentStep].zone);

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {sleep} from "../../../utils/util";
 
 function Waypoint({waypoint, block}) {
     const [local, setLocal] = useState({

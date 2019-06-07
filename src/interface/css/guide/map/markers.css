@@ -4,5 +4,5 @@
     width: 6px;
     height: 6px;
     position: absolute;
-    opacity: 0.7;
+    border: 1px white solid;
 }
