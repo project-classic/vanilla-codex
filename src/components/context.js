@@ -26,6 +26,20 @@ function reducer(state, action) {
             }
         }
 
+        case 'updateMarkers': {
+            return {
+                ...state,
+                currentMarkers: action.payload
+            }
+        }
+
+        case 'toggleMarkers': {
+            return {
+                ...state,
+                markersModified: !state.markersModified
+            }
+        }
+
         // LOAD PROFILE
         case 'load': {
             return {
@@ -108,6 +122,8 @@ function Provider({children}) {
         route: buildRoute(),
         currentStep: 0,
         selectedWaypoint: buildRoute().path[0].waypoints[0],
+        currentMarkers: null,
+        markersModified: false,
         profiles: profiles,
         prompt: {
             visible: false,

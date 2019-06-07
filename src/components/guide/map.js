@@ -6,7 +6,7 @@ import {dimensions, getCenter, getPosition} from "../../utils/map";
 
 import '../../interface/css/guide/map.css';
 import {Next, Previous} from "./map/navigator";
-import Steps from "./map/steps";
+import Step from "./map/step";
 
 function Map() {
     // GLOBAL STATE
@@ -109,8 +109,6 @@ function Map() {
             lastPosition: position,
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + state.route.path[state.currentStep].zone + '.jpg') + ')',
-                // left: '50%',
-                // top:  '50%'
                 left: position.x + 'px',
                 top: position.y + 'px'
             }
@@ -131,10 +129,10 @@ function Map() {
                 onMouseLeave={disableMovement}
                 onMouseMove={updateMapPosition}
             >
-                <Steps/>
+                <Step/>
             </svg>
-            <Previous visibility={local.showChangeStep}/>
-            <Next visibility={local.showChangeStep}/>
+            <Previous visible={local.showChangeStep}/>
+            <Next visible={local.showChangeStep}/>
         </div>
     )
 }

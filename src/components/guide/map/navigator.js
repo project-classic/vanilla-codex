@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
-
-import '../../../interface/css/guide/map.css';
 import {Context} from "../../context";
 
-function Navigator(props) {
+import '../../../interface/css/guide/map/navigator.css';
+
+function Navigator({type, func, visible}) {
     const [local, setLocal] = useState({
         style: {
             opacity: 1
@@ -13,54 +13,54 @@ function Navigator(props) {
     useEffect(() => {
         setLocal({
             style: {
-                opacity: props.visibility ? 1 : 0
+                opacity: visible ? 1 : 0
             }
         })
-    }, [props.visibility]);
+    }, [visible]);
 
     return (
-        <div id={props.type} style={local.style} onClick={props.func}/>
+        <div id={type} style={local.style} onClick={func}/>
     )
 }
 
-function Previous({visibility}) {
+function Previous({visible}) {
     const {state, dispatch} = useContext(Context);
 
     // BROWSE TO PREVIOUS BLOCK
     function previous() {
-        const currentStep = state.currentStep - 1;
+        const previousStep = state.currentStep - 1;
 
-        if (currentStep >= 0) {
+        if (previousStep >= 0) {
             dispatch({
                 type: 'updateCurrentStep',
-                payload: currentStep
+                payload: previousStep
             })
         }
     }
 
     return (
-        <Navigator type={'previous'} func={previous} visibility={visibility}/>
+        <Navigator type={'previous'} func={previous} visible={visible}/>
     );
 }
 
-function Next({visibility}) {
+function Next({visible}) {
     const {state, dispatch} = useContext(Context);
 
     // BROWSE TO NEXT BLOCK
     function next() {
-        const currentStep = state.currentStep + 1;
+        const nextStep = state.currentStep + 1;
 
         // IF THERE IS ROOM TO MOVE
-        if (currentStep <= state.route.path.length - 1) {
+        if (nextStep <= state.route.path.length - 1) {
             dispatch({
                 type: 'updateCurrentStep',
-                payload: currentStep
+                payload: nextStep
             })
         }
     }
 
     return (
-        <Navigator type={'next'} func={next} visibility={visibility}/>
+        <Navigator type={'next'} func={next} visible={visible}/>
     )
 }
 

@@ -1,0 +1,10 @@
+line {
+    stroke-width: 3px;
+    stroke: red;
+    opacity: 0.9;
+    /*stroke-dasharray: 5,5;*/
+}
+
+.blue-line {
+    stroke: rgb(27, 109, 198);
+}
