@@ -7,6 +7,9 @@ import {dimensions, getCenter, getPosition} from "../../utils/map";
 import '../../interface/css/guide/map.css';
 import {Next, Previous} from "./map/navigator";
 import Step from "./map/step";
+import Legend from "./map/legend";
+import zones from '../../resources/zones'
+import Lines from "./map/lines";
 
 function Map() {
     // GLOBAL STATE
@@ -108,7 +111,7 @@ function Map() {
             ...local,
             lastPosition: position,
             style: {
-                backgroundImage: 'url(' + require('../../interface/images/maps/' + state.route.path[state.currentStep].zone + '.jpg') + ')',
+                backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
                 left: position.x + 'px',
                 top: position.y + 'px'
             }
@@ -131,6 +134,8 @@ function Map() {
             >
                 <Step/>
             </svg>
+            <Lines/>
+            <Legend/>
             <Previous visible={local.showChangeStep}/>
             <Next visible={local.showChangeStep}/>
         </div>

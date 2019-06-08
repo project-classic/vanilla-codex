@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import {Context} from "../../context";
 
 import '../../../interface/css/guide/map/lines.css'
+import zones from '../../../resources/zones'
 
 function Lines() {
     const {state} = useContext(Context)
@@ -11,17 +12,17 @@ function Lines() {
     })
 
     const blueLineZones = new Set([
-        'barrens',
-        'stonetalon',
+        'the_barrens',
+        'stonetalon_mountains',
         'orgrimmar',
         'azshara',
         'badlands',
-        'blasted',
+        'blasted_lands',
         'darnassus',
         'durotar',
         'ironforge',
-        'needles',
-        'redridge',
+        'thousand_needles',
+        'redridge_mountains',
         'stormwind',
         'tanaris',
         'westfall',
@@ -38,7 +39,7 @@ function Lines() {
             let nextWaypoint = waypoints[index + 1]
 
             if (nextWaypoint !== undefined) {
-                if (blueLineZones.has(zone)) {
+                if (blueLineZones.has(zones[zone])) {
                     content.push(<line className={'blue-line'} x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)
                 } else {
                     content.push(<line x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)

@@ -16,8 +16,26 @@ function Legend() {
             ...local,
             markers: state.currentMarkers
         })
+
+        buildContent(state.currentMarkers)
+
     }, [state.currentMarkers])
 
+    function buildContent(markers) {
+        let content = []
+
+        if (markers !== null) {
+            markers.forEach(marker => {
+                content.push(<div className={'legend-marker'} onClick={do_something} style={{backgroundColor: marker.color}}/>)
+                content.push(<div className={'legend-text'}>{marker.locations[0].coords.x}</div>)
+            })
+        }
+
+        setLocal({
+            ...local,
+            content: content
+        })
+    }
     function do_something() {
         local.markers[0].visible = !local.markers[0].visible
 
@@ -27,8 +45,10 @@ function Legend() {
         })
     }
     return (
-        <div id={'legend'} onClick={do_something}>testing</div>
+        <div id={'legend-container'}>
+            <div id={'legend-header'}>Legend:</div>
+            {local.content}
+        </div>
     )
 }
-
 export default Legend

@@ -19,12 +19,14 @@ function Markers() {
     });
 
     useEffect(() => {
-        buildMarkers(state.selectedWaypoint)
+        buildMarkers(state.selectedWaypoint, state.route.path[state.currentStep].zone)
     }, [state.selectedWaypoint]);
 
     useEffect(() => {
-        console.log('MARKERS HAVE CHANGED')
-        buildContent(state.currentMarkers)
+        setLocal({
+            ...local,
+            content: buildContent(state.currentMarkers)
+        })
     }, [state.currentMarkers, state.markersModified])
 
     function getPosition(element) {
@@ -34,7 +36,7 @@ function Markers() {
         }
     }
 
-    function buildMarkers(waypoint) {
+    function buildMarkers(waypoint, zone) {
         let markers = []
         let colorIndex = 0
 
@@ -45,8 +47,9 @@ function Markers() {
                         case 'npc': {
                             let locations = []
                             units[quests[objective.id].start.id].locations.forEach(location => {
-                                //TODO: CHECK IF IN THE SAME ZONE
-                                locations.push(location)
+                                if (location.zone.toString() === zone) {
+                                    locations.push(location)
+                                }
                             })
                             markers.push({locations: locations, color: colors[colorIndex], visible: true})
                             colorIndex++
@@ -56,8 +59,9 @@ function Markers() {
                         case 'object': {
                             let locations = []
                             objects[quests[objective.id].start.id].locations.forEach(location => {
-                                //TODO: CHECK THE ZONE
-                                locations.push(location)
+                                if (location.zone.toString() === zone) {
+                                    locations.push(location)
+                                }
                             })
                             markers.push({locations: locations, color: colors[colorIndex], visible: true})
                             colorIndex++
@@ -65,23 +69,31 @@ function Markers() {
                         }
 
                         case 'item': {
-                            items[quests[objective.id].start.id].npcs.forEach(npc => {
-                                let locations = []
-                                units[npc].locations.forEach(location => {
-                                    locations.push(location)
+                            if (items[quests[objective.id].start.id].npcs !== undefined) {
+                                items[quests[objective.id].start.id].npcs.forEach(npc => {
+                                    let locations = []
+                                    units[npc].locations.forEach(location => {
+                                        if (location.zone.toString() === zone) {
+                                            locations.push(location)
+                                        }
+                                    })
+                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                    colorIndex++
                                 })
-                                markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                colorIndex++
-                            })
+                            }
 
-                            items[quests[objective.id].start.id].objects.forEach(object => {
-                                let locations = []
-                                objects[object].locations.forEach(location => {
-                                    locations.push(location)
+                            if (items[quests[objective.id].start.id].objects !== undefined) {
+                                items[quests[objective.id].start.id].objects.forEach(object => {
+                                    let locations = []
+                                    objects[object].locations.forEach(location => {
+                                        if (location.zone.toString() === zone) {
+                                            locations.push(location)
+                                        }
+                                    })
+                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                    colorIndex++
                                 })
-                                markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                colorIndex++
-                            })
+                            }
                             break
                         }
                     }
@@ -93,7 +105,9 @@ function Markers() {
                         case 'npc': {
                             let locations = []
                             units[quests[objective.id].end.id].locations.forEach(location => {
-                                locations.push(location)
+                                if (location.zone.toString() === zone) {
+                                    locations.push(location)
+                                }
                             })
                             markers.push({locations: locations, color: colors[colorIndex], visible: true})
                             colorIndex++
@@ -103,8 +117,9 @@ function Markers() {
                         case 'object': {
                             let locations = []
                             objects[quests[objective.id].end.id].locations.forEach(location => {
-                                //TODO: CHECK THE ZONE
-                                locations.push(location)
+                                if (location.zone.toString() === zone) {
+                                    locations.push(location)
+                                }
                             })
                             markers.push({locations: locations, color: colors[colorIndex], visible: true})
                             colorIndex++
@@ -120,7 +135,9 @@ function Markers() {
                             case 'npc': {
                                 let locations = []
                                 units[objective.id].locations.forEach(location => {
-                                    locations.push(location)
+                                    if (location.zone.toString() === zone) {
+                                        locations.push(location)
+                                    }
                                 })
                                 markers.push({locations: locations, color: colors[colorIndex], visible: true})
                                 colorIndex++
@@ -130,7 +147,9 @@ function Markers() {
                             case 'object': {
                                 let locations = []
                                 objects[objective.id].locations.forEach(location => {
-                                    locations.push(location)
+                                    if (location.zone.toString() === zone) {
+                                        locations.push(location)
+                                    }
                                 })
                                 markers.push({locations: locations, color: colors[colorIndex], visible: true})
                                 colorIndex++
@@ -138,23 +157,31 @@ function Markers() {
                             }
 
                             case 'item': {
-                                items[objective.id].npcs.forEach(npc => {
-                                    let locations = []
-                                    units[npc].locations.forEach(location => {
-                                        locations.push(location)
+                                if (items[objective.id].npcs !== undefined) {
+                                    items[objective.id].npcs.forEach(npc => {
+                                        let locations = []
+                                        units[npc.toString()].locations.forEach(location => {
+                                            if (location.zone.toString() === zone) {
+                                                locations.push(location)
+                                            }
+                                        })
+                                        markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                        colorIndex++
                                     })
-                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                    colorIndex++
-                                })
+                                }
 
-                                items[objective.id].objects.forEach(object => {
-                                    let locations = []
-                                    objects[object].locations.forEach(location => {
-                                        locations.push(location)
+                                if (items[objective.id].objects !== undefined) {
+                                    items[objective.id].objects.forEach(object => {
+                                        let locations = []
+                                        objects[object].locations.forEach(location => {
+                                            if (location.zone.toString() === zone) {
+                                                locations.push(location)
+                                            }
+                                        })
+                                        markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                        colorIndex++
                                     })
-                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                    colorIndex++
-                                })
+                                }
                                 break
                             }
                         }
@@ -164,21 +191,19 @@ function Markers() {
             }
         });
 
-        dispatch({
-            type: 'updateMarkers',
-            payload: markers
-        })
-
         setLocal({
             ...local,
             markers: markers
         })
 
+        dispatch({
+            type: 'updateMarkers',
+            payload: markers
+        })
     }
 
     function buildContent(markers) {
-        let content = []
-
+        const content = [];
 
         if (markers !== null) {
             // Order markers from largest amount of locations to smallest in order to prioritize markers with less locations
@@ -191,10 +216,7 @@ function Markers() {
             })
         }
 
-        setLocal({
-            ...local,
-            content: content
-        })
+        return content
     }
 
     return (
@@ -224,8 +246,9 @@ function Circle({position, color, visible}) {
     }, [visible])
 
     return (
-        <div className={'circle'} style={local.style}/>
+        <circle cx={position.left} cy={position.top} r={'3'} stroke={'white'} strokeWidth={'1'} fill={color}/>
     )
+    // {/*<div className={'circle'} style={local.style}/>*/}
 }
 
 export default Markers

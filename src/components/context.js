@@ -27,6 +27,7 @@ function reducer(state, action) {
         }
 
         case 'updateMarkers': {
+            console.log(action.payload)
             return {
                 ...state,
                 currentMarkers: action.payload

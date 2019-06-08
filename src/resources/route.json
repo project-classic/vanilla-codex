@@ -1,7 +1,7 @@
 {
   "path": [
     {
-      "zone": "durotar",
+      "zone": "14",
       "experience": 0,
       "waypoints": [
         {
@@ -54,6 +54,7 @@
           "objectives": [
             {
               "type": "quest",
+              "id": "790",
               "quest": "sarkoth",
               "description": ""
             }
