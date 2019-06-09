@@ -1,0 +1,38 @@
+#level {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background: rgba(44, 133, 44, 0.212);
+}
+
+.level-text {
+    display: flex;
+    align-self: center;
+    justify-self: left;
+    color: #F1F1F1;
+    font: 16px 'Open Sans', Verdana;
+}
+
+#level-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-left: 2px;
+}
+
+#level-value {
+    justify-self: right;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding-right: 2px;
+}
+
+#level-bar {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background: rgba(255, 255, 255, 0.062);
+    border-right: 1px solid rgba(255, 255, 255, 0.11);
+    transition: 0.2s;
+    width: 50%;
+    height: 100%;
+}

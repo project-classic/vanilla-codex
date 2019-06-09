@@ -10,22 +10,18 @@ body {
     background-color: rgb(56, 56, 56);
     background-image: url('../images/bg.png');
     font: 13px 'Open Sans', verdana;
-    color: #505050;
+    color: #F1F1F1;
 }
 
-/*#root, #root > div, .App {*/
-/*    height: 100%;*/
-/*}*/
+a:link, a:visited, a:hover {
+    color: inherit;
+    transition: .3s;
+    text-decoration: none;
+}
 
 #container {
     display: grid;
     min-height: 100vh;
     min-width: 100vw;
     grid-template-rows: 35px 1fr;
-}
-
-#content {
-    display: grid;
-    grid-template-columns: 1fr 20%;
-    grid-template-rows: 1fr;
 }

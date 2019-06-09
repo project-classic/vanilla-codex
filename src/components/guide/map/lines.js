@@ -40,9 +40,9 @@ function Lines() {
 
             if (nextWaypoint !== undefined) {
                 if (blueLineZones.has(zones[zone])) {
-                    content.push(<line className={'blue-line'} x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)
+                    content.push(<line key={content.length} className={'blue-line'} x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)
                 } else {
-                    content.push(<line x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)
+                    content.push(<line key={content.length} x1={waypoint.coords.x + '%'} y1={waypoint.coords.y + '%'} x2={nextWaypoint.coords.x + '%'} y2={nextWaypoint.coords.y + '%'}/>)
                 }
             }
         })

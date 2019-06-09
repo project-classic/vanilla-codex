@@ -1,0 +1,28 @@
+#hearthstone {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background: rgba(231, 141, 39, 0.274);
+    /*    text-transform: capitalize;*/
+}
+
+.hearthstone-text {
+    align-self: center;
+    justify-self: left;
+    color: #F1F1F1;
+    font: 16px 'Open Sans', Verdana;
+}
+
+#hearthstone-title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding-left: 2px;
+}
+
+#hearthstone-location {
+    justify-self: right;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding-right: 2px;
+}

@@ -27,14 +27,13 @@ function reducer(state, action) {
         }
 
         case 'updateMarkers': {
-            console.log(action.payload)
             return {
                 ...state,
                 currentMarkers: action.payload
             }
         }
 
-        case 'toggleMarkers': {
+        case 'toggleMarker': {
             return {
                 ...state,
                 markersModified: !state.markersModified

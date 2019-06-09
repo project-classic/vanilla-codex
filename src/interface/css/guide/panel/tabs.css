@@ -1,0 +1,12 @@
+#panel-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2px;
+}
+
+.tab {
+    display: flex;
+    background: rgba(78, 255, 246, 0.247);
+    align-items: center;
+    justify-content: center;
+}

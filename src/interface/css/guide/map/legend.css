@@ -1,6 +1,6 @@
 #legend-container {
     display: grid;
-    grid-template-columns: 26px min-content;
+    grid-template-columns: 26px max-content;
     grid-template-rows: min-content;
     grid-auto-rows: 25px;
     position: fixed;
@@ -33,7 +33,8 @@
     font: 14px 'Open Sans', Verdana;
     color: #F1F1F1;
     align-self: center;
-    justify-self: center;
+    justify-self: left;
+    padding-right: 2px;
 }
 
 #legend {

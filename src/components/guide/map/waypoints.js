@@ -24,7 +24,7 @@ function Waypoints() {
                 top: 'calc(' + waypoint.coords.y + '% - 5px)'
             }
 
-            content.push(<img src={require('../../../interface/images/numbers/' + number + '.png')} className={'waypoint'} style={style}/>)
+            content.push(<img key={content.length} src={require('../../../interface/images/numbers/' + number + '.png')} className={'waypoint'} style={style} alt={''}/>)
         })
 
         setLocal({

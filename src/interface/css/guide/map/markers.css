@@ -4,5 +4,11 @@
     width: 6px;
     height: 6px;
     position: absolute;
-    border: 1px white solid;
+    border: 1px black solid;
+}
+
+circle {
+    r: 3px;
+    stroke: black;
+    stroke-width: 1px;
 }

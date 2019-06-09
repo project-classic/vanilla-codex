@@ -8,8 +8,24 @@ import items from '../../../resources/items'
 import '../../../interface/css/guide/map/markers.css'
 
 function Markers() {
-    const colors = ["#1bc63e", "#E94F37", "#1C89BF", "#A1D363",
-        "#85FFC7", "#297373", "#FF8552", "#A40E4C"];
+    const colors= [
+        '#E45E0A',
+        '#AE05B7',
+        '#0E3D13',
+        // '#473728',
+        '#000CF4',
+        '#EC8CCE',
+        '#D00F0F',
+        '#33D087',
+        '#2D9EF5',
+        '#2D193D',
+        '#15EE27',
+        '#EAE61F',
+        '#560A0A',
+        '#515151',
+        '#FFFFFF',
+        '#000000'
+    ]
 
     const {state, dispatch} = useContext(Context);
 
@@ -29,15 +45,9 @@ function Markers() {
         })
     }, [state.currentMarkers, state.markersModified])
 
-    function getPosition(element) {
-        return {
-            left: 'calc(' + element.coords.x + '% - 3px)',
-            top: 'calc(' + element.coords.y + '% - 3px)'
-        }
-    }
-
     function buildMarkers(waypoint, zone) {
         let markers = []
+        let markerNames = []
         let colorIndex = 0
 
         waypoint.objectives.forEach(objective => {
@@ -51,8 +61,11 @@ function Markers() {
                                     locations.push(location)
                                 }
                             })
-                            markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                            colorIndex++
+                            if (!markerNames.includes(units[quests[objective.id].start.id].name)) {
+                                markers.push({name: units[quests[objective.id].start.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(units[quests[objective.id].start.id].name)
+                                colorIndex++
+                            }
                             break
                         }
 
@@ -63,8 +76,11 @@ function Markers() {
                                     locations.push(location)
                                 }
                             })
-                            markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                            colorIndex++
+                            if (!markerNames.includes(objects[quests[objective.id].start.id].name)) {
+                                markers.push({name: objects[quests[objective.id].start.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(objects[quests[objective.id].start.id].name)
+                                colorIndex++
+                            }
                             break
                         }
 
@@ -77,8 +93,11 @@ function Markers() {
                                             locations.push(location)
                                         }
                                     })
-                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                    colorIndex++
+                                    if (!markerNames.includes(units[npc].name)) {
+                                        markers.push({name: units[npc].name, locations: locations, color: colors[colorIndex], visible: true})
+                                        markerNames.push(units[npc].name)
+                                        colorIndex++
+                                    }
                                 })
                             }
 
@@ -90,8 +109,11 @@ function Markers() {
                                             locations.push(location)
                                         }
                                     })
-                                    markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                                    colorIndex++
+                                    if (!markerNames.includes(objects[object].name)) {
+                                        markers.push({name: objects[object].name, locations: locations, color: colors[colorIndex], visible: true})
+                                        markerNames.push(objects[object].name)
+                                        colorIndex++
+                                    }
                                 })
                             }
                             break
@@ -109,8 +131,11 @@ function Markers() {
                                     locations.push(location)
                                 }
                             })
-                            markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                            colorIndex++
+                            if (!markerNames.includes(units[quests[objective.id].end.id].name)) {
+                                markers.push({name: units[quests[objective.id].end.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(units[quests[objective.id].end.id].name)
+                                colorIndex++
+                            }
                             break
                         }
 
@@ -121,8 +146,11 @@ function Markers() {
                                     locations.push(location)
                                 }
                             })
-                            markers.push({locations: locations, color: colors[colorIndex], visible: true})
-                            colorIndex++
+                            if (!markerNames.includes(objects[quests[objective.id].end.id].name)) {
+                                markers.push({name: objects[quests[objective.id].end.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(objects[quests[objective.id].end.id].name)
+                                colorIndex++
+                            }
                             break
                         }
                     }
@@ -139,7 +167,8 @@ function Markers() {
                                         locations.push(location)
                                     }
                                 })
-                                markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                markers.push({name: units[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(units[objective.id].name)
                                 colorIndex++
                                 break
                             }
@@ -151,7 +180,8 @@ function Markers() {
                                         locations.push(location)
                                     }
                                 })
-                                markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                markers.push({name: objects[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                markerNames.push(objects[objective.id].name)
                                 colorIndex++
                                 break
                             }
@@ -165,7 +195,8 @@ function Markers() {
                                                 locations.push(location)
                                             }
                                         })
-                                        markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                        markers.push({name: units[npc.toString()].name, locations: locations, color: colors[colorIndex], visible: true})
+                                        markerNames.push(units[npc.toString()].name)
                                         colorIndex++
                                     })
                                 }
@@ -178,7 +209,8 @@ function Markers() {
                                                 locations.push(location)
                                             }
                                         })
-                                        markers.push({locations: locations, color: colors[colorIndex], visible: true})
+                                        markers.push({name: objects[object].name, locations: locations, color: colors[colorIndex], visible: true})
+                                        markerNames.push(objects[object].name)
                                         colorIndex++
                                     })
                                 }
@@ -211,7 +243,7 @@ function Markers() {
 
             markers.forEach(marker => {
                 marker.locations.forEach(location => {
-                    content.push(<Circle key={content.length} position={getPosition(location)} color={marker.color} visible={marker.visible}/>)
+                    content.push(<Circle key={content.length} position={location} color={marker.color} visible={marker.visible}/>)
                 })
             })
         }
@@ -228,25 +260,17 @@ function Markers() {
 
 function Circle({position, color, visible}) {
     const [local, setLocal] = useState({
-        style: {
-            top: position.top,
-            left: position.left,
-            backgroundColor: color,
-            opacity: 1
-        }
+        opacity: visible.toString()
     })
 
     useEffect(() => {
         setLocal({
-            style: {
-                ...local.style,
-                opacity: visible ? 1 : 0
-            }
+            opacity: visible ? "1" : "0"
         })
     }, [visible])
 
     return (
-        <circle cx={position.left} cy={position.top} r={'3'} stroke={'white'} strokeWidth={'1'} fill={color}/>
+        <circle cx={position.coords.x + '%'} cy={position.coords.y + '%'} fill={color} opacity={local.opacity} />
     )
     // {/*<div className={'circle'} style={local.style}/>*/}
 }

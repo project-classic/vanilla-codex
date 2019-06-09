@@ -9,7 +9,6 @@ import {Next, Previous} from "./map/navigator";
 import Step from "./map/step";
 import Legend from "./map/legend";
 import zones from '../../resources/zones'
-import Lines from "./map/lines";
 
 function Map() {
     // GLOBAL STATE
@@ -102,21 +101,21 @@ function Map() {
 
     // CHANGE POSITION
     useEffect(() => {
-        const position = getCenter({
-            waypoints: state.route.path[state.currentStep].waypoints,
-            resolution: dimensions()
-        });
+        const waypoints = state.route.path[state.currentStep].waypoints
+        const resolution = dimensions()
+        const position = getCenter({waypoints: waypoints, resolution: resolution})
 
         setLocal({
             ...local,
             lastPosition: position,
+            resolution: resolution,
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
                 left: position.x + 'px',
                 top: position.y + 'px'
             }
         })
-    }, [local.resolution, state.route.path, state.currentStep, state.profiles]);
+    }, [local.resolution, state.route.path, state.currentStep, state.profiles, state.loaded]);
 
     return (
         <div id={'map-wrapper'} onMouseOver={enableChangeStep} onMouseOut={disableChangeStep}>
@@ -134,7 +133,6 @@ function Map() {
             >
                 <Step/>
             </svg>
-            <Lines/>
             <Legend/>
             <Previous visible={local.showChangeStep}/>
             <Next visible={local.showChangeStep}/>

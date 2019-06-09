@@ -2,6 +2,7 @@ line {
     stroke-width: 3px;
     stroke: red;
     opacity: 0.9;
+    stroke-linecap: round;
     /*stroke-dasharray: 5,5;*/
 }
 

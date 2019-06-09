@@ -8,14 +8,14 @@
           "objectives": [
             {
               "type": "accept",
-              "quest": "your place in the world",
               "id": "4641",
+              "quest": "your place in the world",
               "description": ""
             },
             {
               "type": "complete",
-              "quest": "your place in the world",
               "id": "4641",
+              "quest": "your place in the world",
               "description": ""
             },
             {
@@ -34,14 +34,14 @@
           "objectives": [
             {
               "type": "quest",
-              "quest": "cutting teeth",
               "id": "788",
-              "description": "Don't have to complete it now"
+              "quest": "cutting teeth",
+              "description": "Don't have to complete nowsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
             },
             {
               "type": "accept",
               "id": "790",
-              "quest": "sarkoth",
+              "quest": "Sarkoth",
               "description": ""
             }
           ],
@@ -55,7 +55,7 @@
             {
               "type": "quest",
               "id": "790",
-              "quest": "sarkoth",
+              "quest": "Sarkoth",
               "description": ""
             }
           ],
@@ -67,32 +67,21 @@
       ]
     },
     {
-      "zone": "durotar",
+      "zone": "14",
       "experience": 0,
       "waypoints": [
         {
           "objectives": [
             {
-              "type": "quest",
-              "quest": "sarkoth",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 40,
-            "y": 66
-          }
-        },
-        {
-          "objectives": [
-            {
               "type": "complete",
-              "quest": "sarkoth",
+              "id": "790",
+              "quest": "Sarkoth",
               "description": ""
             },
             {
               "type": "accept",
-              "quest": "sarkoth_p2",
+              "id": "804",
+              "quest": "Sarkoth",
               "description": ""
             },
             {
@@ -109,26 +98,31 @@
           "objectives": [
             {
               "type": "complete",
+              "id": "788",
               "quest": "cutting teeth",
               "description": ""
             },
             {
               "type": "complete",
-              "quest": "sarkoth_p2",
+              "id": "804",
+              "quest": "Sarkoth",
               "description": ""
             },
             {
               "type": "accept",
+              "id": "789",
               "quest": "sting of the scorpid",
               "description": ""
             },
             {
               "type": "accept",
+              "id": "2383",
               "quest": "simple parchment",
               "description": ""
             },
             {
               "type": "accept",
+              "id": "4402",
               "quest": "galgar's cactus apple surprise",
               "description": ""
             },
@@ -138,16 +132,19 @@
             },
             {
               "type": "accept",
-              "quest": "vile familiars",
+              "id": "792",
+              "quest": "Vile Familiars",
               "description": ""
             },
             {
               "type": "complete",
+              "id": "2383",
               "quest": "simple parchment",
               "description": "Train spells"
             },
             {
               "type": "accept",
+              "id": "5441",
               "quest": "lazy peons",
               "description": ""
             }
@@ -161,857 +158,32 @@
           "objectives": [
             {
               "type": "quest",
+              "id": "4402",
               "quest": "galgar's cactus apple surprise",
               "description": ""
             },
             {
               "type": "quest",
+              "id": "789",
               "quest": "sting of the scorpid",
               "description": ""
             },
             {
               "type": "quest",
+              "id": "5441",
               "quest": "lazy peons",
               "description": ""
             },
             {
               "type": "quest",
-              "quest": "vile familiars",
+              "id": "792",
+              "quest": "Vile Familiars",
               "description": ""
             }
           ],
           "coords": {
             "x": 45,
-            "y": 59
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "galgar's cactus apple surprise",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "sting of the scorpid",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "lazy peons",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "vile familiars",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 58
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "sting of the scorpid",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "galgar's cactus apple surprise",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Sell trash"
-            },
-            {
-              "type": "complete",
-              "quest": "vile familiars",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "burning blade medallion",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Train spells"
-            },
-            {
-              "type": "complete",
-              "quest": "lazy peons",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "thazz'ril's pick",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 42,
-            "y": 68
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "burning blade medallion",
-              "description": "Hug the right of cave"
-            },
-            {
-              "type": "quest",
-              "quest": "thazz'ril's pick",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Hearthstone"
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 55
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "burning blade medallion",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "report to sen'jin village",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "thazz'ril's pick",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 42,
-            "y": 68
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "thwarting kolkar aggression",
-              "description": "NPC Patrols"
-            }
-          ],
-          "coords": {
-            "x": 53,
-            "y": 74
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "report to sen'jin village",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "minshina's skull",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "report to orgnil",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "zalazane",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "a solvent spirit",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "practical prey",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Sell trash and buy Large Axe if possible"
-            }
-          ],
-          "coords": {
-            "x": 56,
-            "y": 75
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "a peon's burden",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 53,
-            "y": 68
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Make sure you're level 6"
-            },
-            {
-              "type": "complete",
-              "quest": "report to orgnil",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "dark storms",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "vanquish the betrayers",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "encroachment",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 52,
-            "y": 43
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "carry your weight",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 50,
-            "y": 41
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "break a few eggs",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "a peon's burden",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Set Hearthstone"
-            },
-            {
-              "type": "note",
-              "description": "Buy Large Axe if not done"
-            },
-            {
-              "type": "note",
-              "description": "Train Parry at warrior trainer"
-            },
-            {
-              "type": "note",
-              "description": "Get Apprentice First Aid"
-            },
-            {
-              "type": "note",
-              "description": "If you have the money, get Apprentice Mining and buy a pick"
-            }
-          ],
-          "coords": {
-            "x": 51,
-            "y": 41
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "lost but not forgotten",
-              "description": "Finish it"
-            }
-          ],
-          "coords": {
-            "x": 35,
-            "y": 43
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "lost but not forgotten",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 43,
-            "y": 30
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "dark storms",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "path of defense",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 40,
-            "y": 26
-          }
-        }
-      ]
-    },
-    {
-      "zone": "barrens",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "path of defense",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "thun'grim firegaze",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 61,
-            "y": 21
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "thun'grim firegaze",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "forged steel",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 57,
-            "y": 29
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "forged steel",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 55,
-            "y": 27
-          }
-        }
-      ]
-    },
-    {
-      "zone": "barrens",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "forged steel",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 54,
-            "y": 28
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "forged steel",
-              "description": "Pick axe"
-            }
-          ],
-          "coords": {
-            "x": 57,
-            "y": 30
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "crossroads conscription",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "meats to orgrimmar",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "meats to orgrimmar",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Hearthstone"
-            }
-          ],
-          "coords": {
-            "x": 51,
-            "y": 30
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "dark storms",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "margoz",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Sell trash / resupply"
-            }
-          ],
-          "coords": {
-            "x": 52,
-            "y": 43
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "securing the lines",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 53,
-            "y": 24
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "securing the lines",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 23
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "finding the antidote",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 41,
-            "y": 17
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Go to Orgrimmar"
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 10
-          }
-        }
-      ]
-    },
-    {
-      "zone": "orgrimmar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Train cooking"
-            }
-          ],
-          "coords": {
-            "x": 59,
-            "y": 52
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Train skinning / buy skinning knife"
-            }
-          ],
-          "coords": {
-            "x": 62,
-            "y": 45
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "hidden enemies",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "the admiral's orders_p2",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 34,
-            "y": 37
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "quest": "finding the antidote",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 47,
-            "y": 53
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Exit Orgrimmar"
-            }
-          ],
-          "coords": {
-            "x": 51,
-            "y": 84
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "margoz",
-              "description": "Kill scorpions for antidote"
-            },
-            {
-              "type": "accept",
-              "quest": "skull rock",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 55,
-            "y": 19
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "skull rock",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "hidden enemies",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "burning shadows",
-              "description": "Started from item dropped by Gazz'uz. Use Faintly Glowing Skull"
-            },
-            {
-              "type": "note",
-              "description": "Grind mobs until at least first aid 40"
-            }
-          ],
-          "coords": {
-            "x": 54,
-            "y": 10
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "skull rock",
-              "description": "Grind scorpions for antidote"
-            },
-            {
-              "type": "accept",
-              "quest": "neeru fireblade",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 55,
-            "y": 19
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "quest": "finding the antidote",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 52,
-            "y": 15
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Go to Orgrimmar"
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 11
-          }
-        }
-      ]
-    },
-    {
-      "zone": "orgrimmar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "hidden enemies",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "hidden enemies_p2",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 34,
-            "y": 37
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "finding the antidote",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "neeru fireblade",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "quest": "ak'zeloth",
-              "description": ""
-            },
-            {
-              "type": "complete",
-              "quest": "burning shadows",
-              "description": ""
-            },
-            {
-              "type": "quest",
-              "quest": "hidden enemies_p2",
-              "description": ""
-            }
-          ],
-          "coords": {
-            "x": 47,
-            "y": 54
-          }
-        }
-      ]
-    },
-    {
-      "zone": "orgrimmar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "hidden enemies_p2",
-              "description": "destroy the Lieutenant's Insignia"
-            }
-          ],
-          "coords": {
-            "x": 34,
-            "y": 37
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "If you can afford it, train thrown and staves and buy a stack of throwing daggers"
-            }
-          ],
-          "coords": {
-            "x": 79,
-            "y": 21
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Go inside RFC, die, res at spirit healer"
-            }
-          ],
-          "coords": {
-            "x": 47,
-            "y": 53
-          }
-        }
-      ]
-    },
-    {
-      "zone": "durotar",
-      "experience": 0,
-      "waypoints": [
-        {
-          "objectives": [
-            {
-              "type": "complete",
-              "quest": "need for a cure",
-              "description": "Might need to abandon / accept quest"
-            }
-          ],
-          "coords": {
-            "x": 41,
-            "y": 17
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "note",
-              "description": "Take zeppelin to Undercity"
-            }
-          ],
-          "coords": {
-            "x": 51,
-            "y": 13
+            "y": 60
           }
         }
       ]

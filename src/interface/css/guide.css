@@ -1,0 +1,6 @@
+#guide {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    grid-template-rows: 1fr;
+    margin: 7px;
+}

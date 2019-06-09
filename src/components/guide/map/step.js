@@ -9,8 +9,7 @@ function Step() {
             <Lines/>
             <Markers/>
             <foreignObject width={'100%'} height={'100%'}>
-                {/*<Markers/>*/}
-                {/*<Waypoints/>*/}
+                <Waypoints/>
             </foreignObject>
         </React.Fragment>
     )

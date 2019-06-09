@@ -18,7 +18,7 @@ function Guide() {
 
     if (state.route !== null) {
         return (
-            <div id={'content'}>
+            <div id={'guide'}>
                 <EventListener target={document} onKeyDown={keyEvent}/>
                 <Message/>
                 <Map/>
