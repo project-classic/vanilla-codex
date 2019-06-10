@@ -12,7 +12,7 @@ function Waypoints() {
 
     useEffect(() => {
         buildContent(state.route.path[state.currentStep].waypoints)
-    }, [state.currentStep, state.route]);
+    }, [state.currentStep, state.route, state.selectedWaypoint]);
 
     function buildContent(waypoints) {
         let content = []
@@ -22,6 +22,12 @@ function Waypoints() {
             let style = {
                 left: 'calc(' + waypoint.coords.x + '% - 6px)',
                 top: 'calc(' + waypoint.coords.y + '% - 6px)'
+            }
+            if (waypoint === state.selectedWaypoint) {
+                style = {
+                    ...style,
+                    border: '1px white solid'
+                }
             }
 
             content.push(<img key={content.length} src={require('../../../interface/images/numbers/' + number + '.png')} className={'waypoint'} style={style} alt={''}/>)

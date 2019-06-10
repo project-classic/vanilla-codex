@@ -128,36 +128,80 @@ function Map() {
         let bigY = 0
         let scale = 1
 
-        let newX = newCenter.x
-        let newY = newCenter.y
-
         if (state.currentMarkers !== null) {
+            waypoints.forEach(waypoint => {
+                if (waypoint.coords.x > bigX) {
+                    bigX = waypoint.coords.x
+                }
+                if (waypoint.coords.x < smallX) {
+                    smallX = waypoint.coords.y
+                }
+                if (waypoint.coords.y > bigY) {
+                    bigY = waypoint.coords.y
+                }
+                if (waypoint.coords.y < smallY) {
+                    smallY = waypoint.coords.y
+                }
+            })
             state.currentMarkers.forEach(marker => {
                 marker.locations.forEach(location => {
                     if (location.coords.x > bigX) {
                         bigX = location.coords.x
-                    } else if (location.coords.x < smallX) {
+                    }
+                    if (location.coords.x < smallX) {
                         smallX = location.coords.x
                     }
                     if (location.coords.y > bigY) {
                         bigY = location.coords.y
-                    } else if (location.coords.y < smallY) {
+                    }
+                    if (location.coords.y < smallY) {
                         smallY = location.coords.y
                     }
                 })
             })
-
-            let xDiff = (bigX - smallX) * 0.01 * 1440
-            let yDiff = (bigY - smallY) * 0.01 * 960
-
-            while ((scale * xDiff < 1440) && (scale * yDiff < 960) && scale < 5) {
-                scale += 0.25
-            }
-            scale -= 1
-
-            newX = (bigX + smallX) / 2
-            newY = (bigY + smallY) / 2
         }
+        console.log(smallX, bigX, smallY, bigY)
+        let newX = (smallX + bigX) / 2
+        let newY = (smallY + bigY) / 2
+        console.log(newX, newY)
+        let width = resolution.width
+        let height = resolution.height
+        let xDiff = (bigX * 0.01 * 1440) - (smallX * 0.01 * 1440)
+        let yDiff = (bigY * 0.01 * 960) - (smallY * 0.01 * 960)
+        let scaleZ = 0
+        if (xDiff > yDiff) {
+            scaleZ = width / xDiff
+        } else {
+            scaleZ = height / yDiff
+        }
+        scaleZ = scaleZ > 5 ? 5 : scaleZ
+
+        // if (state.currentMarkers !== null) {
+        //     state.currentMarkers.forEach(marker => {
+        //         marker.locations.forEach(location => {
+        //             if (location.coords.x > bigX) {
+        //                 bigX = location.coords.x
+        //             } else if (location.coords.x < smallX) {
+        //                 smallX = location.coords.x
+        //             }
+        //             if (location.coords.y > bigY) {
+        //                 bigY = location.coords.y
+        //             } else if (location.coords.y < smallY) {
+        //                 smallY = location.coords.y
+        //             }
+        //         })
+        //     })
+        //
+        //     let xDiff = (bigX - smallX) * 0.01 * 1440
+        //     let yDiff = (bigY - smallY) * 0.01 * 960
+        //
+        //     while ((scale * xDiff < 1440) && (scale * yDiff < 960) && scale < 5) {
+        //         scale += 0.25
+        //     }
+        //     scale -= 1
+        //
+        //     newX = (bigX + smallX) / 2
+        //     newY = (bigY + smallY) / 2
 
         setLocal({
             ...local,
@@ -165,8 +209,8 @@ function Map() {
             resolution: resolution,
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
-                transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
-                // transform: 'scale(' + scale + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
+                // transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
+                transform: 'scale(' + scaleZ * 0.75 + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
                 // left: position.x + 'px',
                 // top: position.y + 'px'
             }
