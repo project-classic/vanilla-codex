@@ -20,8 +20,8 @@ function Waypoints() {
         waypoints.forEach((waypoint, index) => {
             let number = index + 1
             let style = {
-                left: 'calc(' + waypoint.coords.x + '% - 5px)',
-                top: 'calc(' + waypoint.coords.y + '% - 5px)'
+                left: 'calc(' + waypoint.coords.x + '% - 6px)',
+                top: 'calc(' + waypoint.coords.y + '% - 6px)'
             }
 
             content.push(<img key={content.length} src={require('../../../interface/images/numbers/' + number + '.png')} className={'waypoint'} style={style} alt={''}/>)

@@ -72,25 +72,41 @@ function Map() {
     }
 
     function updateMapPosition(event) {
-        event.persist();
-        if (local.movementEnabled) {
-            const position = getPosition({
-                event: event,
-                lastEvent: local.lastEvent,
-                lastPosition: local.lastPosition,
-                resolution: local.resolution
-            });
+        // event.persist();
+        // if (local.movementEnabled) {
+        //     const position = getPosition({
+        //         event: event,
+        //         lastEvent: local.lastEvent,
+        //         lastPosition: local.lastPosition,
+        //         resolution: local.resolution
+        //     });
+        //
+        //     setLocal({
+        //         ...local,
+        //         lastEvent: event,
+        //         lastPosition: position,
+        //         style: {
+        //             ...local.style,
+        //             left: position.x + 'px',
+        //             top: position.y + 'px'
+        //         }
+        //     })
+        // }
+    }
 
-            setLocal({
-                ...local,
-                lastEvent: event,
-                lastPosition: position,
-                style: {
-                    ...local.style,
-                    left: position.x + 'px',
-                    top: position.y + 'px'
-                }
-            })
+    function getCenterFunky(waypoints) {
+        let x = 0
+        let y = 0
+        let waypointNumber = 0
+        waypoints.forEach(waypoint => {
+            x += (waypoint.coords.x)
+            y += (waypoint.coords.y)
+            waypointNumber++
+        })
+
+        return {
+            x: x / waypointNumber,
+            y: y / waypointNumber
         }
     }
 
@@ -105,17 +121,48 @@ function Map() {
         const resolution = dimensions()
         const position = getCenter({waypoints: waypoints, resolution: resolution})
 
+        const newCenter = getCenterFunky(waypoints)
+        let smallX = 100
+        let bigX = 0
+        let smallY = 100
+        let bigY = 0
+        let scale = 1
+
+        if (state.currentMarkers !== null) {
+            state.currentMarkers.forEach(marker => {
+                marker.locations.forEach(location => {
+                    if (location.coords.x > bigX) {
+                        bigX = location.coords.x
+                    } else if (location.coords.x < smallX) {
+                        smallX = location.coords.x
+                    } else if (location.coords.y > bigY) {
+                        bigY = location.coords.y
+                    } else if (location.coords.y < smallY) {
+                        smallY = location.coords.y
+                    }
+                })
+            })
+
+            let xDiff = (bigX - smallX) * 0.01 * 1440
+            let yDiff = (bigY - smallY) * 0.01 * 960
+            console.log(xDiff, yDiff, bigY, smallY)
+            while ((scale * xDiff < 1440) && (scale * yDiff < 960) && scale < 5) {
+                scale += 0.25
+            }
+            scale -= 1
+        }
         setLocal({
             ...local,
             lastPosition: position,
             resolution: resolution,
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
-                left: position.x + 'px',
-                top: position.y + 'px'
+                transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
+                // left: position.x + 'px',
+                // top: position.y + 'px'
             }
         })
-    }, [local.resolution, state.route.path, state.currentStep, state.profiles, state.loaded]);
+    }, [local.resolution, state.route.path, state.currentStep, state.profiles, state.loaded, state.currentMarkers]);
 
     return (
         <div id={'map-wrapper'} onMouseOver={enableChangeStep} onMouseOut={disableChangeStep}>

@@ -12,7 +12,6 @@ function Markers() {
         '#E45E0A',
         '#AE05B7',
         '#0E3D13',
-        // '#473728',
         '#000CF4',
         '#EC8CCE',
         '#D00F0F',

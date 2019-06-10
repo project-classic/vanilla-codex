@@ -9,10 +9,13 @@ function Quests() {
     const [local, setLocal] = useState({})
 
     useEffect(() => {
-        dispatch({
-            type: 'selectWaypoint',
-            payload: state.route.path[state.currentStep].waypoints[0]
-        })
+        // dispatch({
+        //     type: 'selectWaypoint',
+        //     payload: {
+        //         selectedWaypoint: state.route.path[state.currentStep].waypoints[0],
+        //         selectedWaypointIndex: 0
+        //     }
+        // })
 
         buildContent(state.route.path[state.currentStep].waypoints)
     }, [state.currentStep, state.route])
@@ -42,7 +45,8 @@ function QuestGroup({waypoint, index}) {
 
     const [local, setLocal] = useState({
         content: null,
-        style: {}
+        style: {},
+        style_d: {}
     })
 
     useEffect(() => {
@@ -64,7 +68,10 @@ function QuestGroup({waypoint, index}) {
             ...local,
             content: content,
             style: {
-                border: selected ? '1px solid red' : null
+                border: selected ? '3px solid black' : null
+            },
+            style_d: {
+                background: selected ? 'rgba(255, 255, 255, 0.3)' : null
             }
         })
     }
@@ -72,13 +79,16 @@ function QuestGroup({waypoint, index}) {
     function selectGroup() {
         dispatch({
             type: 'selectWaypoint',
-            payload: waypoint
+            payload: {
+                selectedWaypoint: waypoint,
+                selectedWaypointIndex: index
+            }
         })
     }
 
     return (
         <div className={'quest-group'} onClick={selectGroup} style={local.style}>
-            <div className={'quest-group-title'}>{index + 1}.</div>
+            <div className={'quest-group-title'} style={local.style_d}>{index + 1}.</div>
             {local.content}
         </div>
     )

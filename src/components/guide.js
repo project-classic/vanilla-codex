@@ -9,10 +9,20 @@ import Map from "./guide/map";
 import Panel from "./guide/panel";
 
 function Guide() {
-    const {state} = useContext(Context);
+    const {state, dispatch} = useContext(Context);
 
     function keyEvent(event) {
-        console.log('event happened')
+        console.log(event.key.toLowerCase())
+        if (event.key.toLowerCase() === 'd') {
+            dispatch({
+                type: 'nextWaypoint'
+            })
+        } else if (event.key.toLowerCase() === 'a') {
+            dispatch({
+                type: 'previousWaypoint'
+            })
+        }
+
         // key_listener(event, state, dispatch)
     }
 

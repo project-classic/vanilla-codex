@@ -13,16 +13,62 @@ const Context = createContext(undefined);
 function reducer(state, action) {
     switch (action.type) {
         case 'updateCurrentStep': {
+            let selectedWaypoint = state.route.path[action.payload].waypoints[0]
+            let selectedWaypointIndex = 0
             return {
                 ...state,
-                currentStep: action.payload
+                currentStep: action.payload,
+                selectedWaypoint: selectedWaypoint,
+                selectedWaypointIndex: selectedWaypointIndex
+
             }
         }
 
         case 'selectWaypoint': {
             return {
                 ...state,
-                selectedWaypoint: action.payload
+                selectedWaypoint: action.payload.selectedWaypoint,
+                selectedWaypointIndex: action.payload.selectedWaypointIndex
+            }
+        }
+
+        case 'nextWaypoint': {
+            let newIndex = state.selectedWaypointIndex
+            let newWaypoint = state.selectedWaypoint
+            let newCurrentStep = state.currentStep
+            if (state.selectedWaypointIndex + 1 < state.route.path[state.currentStep].waypoints.length) {
+                newIndex = state.selectedWaypointIndex + 1
+                newWaypoint = state.route.path[state.currentStep].waypoints[newIndex]
+            } else if (state.selectedWaypointIndex + 1 >= state.route.path[state.currentStep].waypoints.length) {
+                newIndex = 0
+                newCurrentStep = state.currentStep + 1
+                newWaypoint = state.route.path[newCurrentStep].waypoints[newIndex]
+            }
+            return {
+                ...state,
+                selectedWaypoint: newWaypoint,
+                selectedWaypointIndex: newIndex,
+                currentStep: newCurrentStep
+            }
+        }
+
+        case 'previousWaypoint': {
+            let newIndex = state.selectedWaypointIndex
+            let newWaypoint = state.selectedWaypoint
+            let newCurrentStep = state.currentStep
+            if (state.selectedWaypointIndex > 0) {
+                newIndex = state.selectedWaypointIndex - 1
+                newWaypoint = state.route.path[state.currentStep].waypoints[newIndex]
+            } else {
+                newCurrentStep = state.currentStep - 1
+                newIndex = state.route.path[newCurrentStep].waypoints.length - 1
+                newWaypoint = state.route.path[newCurrentStep].waypoints[newIndex]
+            }
+            return {
+                ...state,
+                selectedWaypoint: newWaypoint,
+                selectedWaypointIndex: newIndex,
+                currentStep: newCurrentStep
             }
         }
 
@@ -122,6 +168,7 @@ function Provider({children}) {
         route: buildRoute(),
         currentStep: 0,
         selectedWaypoint: buildRoute().path[0].waypoints[0],
+        selectedWaypointIndex: 0,
         currentMarkers: null,
         markersModified: false,
         profiles: profiles,

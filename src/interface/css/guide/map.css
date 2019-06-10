@@ -3,6 +3,8 @@
     height: 960px;
     transition: 0.2s;
     position: absolute;
+    /*transform: scale(2);*/
+    /*transform-origin: 42% 68%;*/
 }
 
 #map-wrapper {
