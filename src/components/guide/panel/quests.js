@@ -9,14 +9,6 @@ function Quests() {
     const [local, setLocal] = useState({})
 
     useEffect(() => {
-        // dispatch({
-        //     type: 'selectWaypoint',
-        //     payload: {
-        //         selectedWaypoint: state.route.path[state.currentStep].waypoints[0],
-        //         selectedWaypointIndex: 0
-        //     }
-        // })
-
         buildContent(state.route.path[state.currentStep].waypoints)
     }, [state.currentStep, state.route])
 

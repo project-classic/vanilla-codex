@@ -189,6 +189,314 @@
           }
         }
       ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "789",
+              "quest": "sting of the scorpid",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "4402",
+              "quest": "galgar's cactus apple surprise",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Vendor trash"
+            },
+            {
+              "type": "complete",
+              "id": "792",
+              "quest": "Vile Familiars",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "794",
+              "quest": "burning blade medallion",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Train spells"
+            },
+            {
+              "type": "complete",
+              "id": "5441",
+              "quest": "lazy peons",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "6394",
+              "quest": "thazz'ril's pick",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 42,
+            "y": 68
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "794",
+              "quest": "burning blade medallion",
+              "description": "Hug the right of the cave"
+            },
+            {
+              "type": "quest",
+              "id": "6394",
+              "quest": "thazz'ril's pick",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Hearthstone back to town"
+            }
+          ],
+          "coords": {
+            "x": 45,
+            "y": 56
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "794",
+              "quest": "burning blade medallion",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "805",
+              "quest": "report to sen'jin village",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "6394",
+              "quest": "thazz'ril's pick",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 42,
+            "y": 68
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "786",
+              "quest": "thwarting kolkar aggression",
+              "description": "NPC Patrols"
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 74
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "805",
+              "quest": "report to sen'jin village",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "808",
+              "quest": "minshina's skull",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "823",
+              "quest": "report to orgnil",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "826",
+              "quest": "zalazane",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "818",
+              "quest": "a solvent spirit",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "817",
+              "quest": "practical prey",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Buy Large Axe if you can"
+            }
+          ],
+          "coords": {
+            "x": 56,
+            "y": 73
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "2161",
+              "quest": "a peon's burden",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 53,
+            "y": 67
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "note",
+              "description": "Make sure to be lvl 6"
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "823",
+              "quest": "report to orgnil",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "806",
+              "quest": "dark storms",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "784",
+              "quest": "vanquish the betrayers",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "837",
+              "quest": "encroachment",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "791",
+              "quest": "carry your weight",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "815",
+              "quest": "break a few eggs",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "2161",
+              "quest": "a peon's burden",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Set hearthstone"
+            },
+            {
+              "type": "note",
+              "description": "Buy Large Axe if not done"
+            },
+            {
+              "type": "note",
+              "description": "Train mining and buy pick"
+            },
+            {
+              "type": "note",
+              "description": "Train spells"
+            },
+            {
+              "type": "note",
+              "description": "If you have money, train first aid"
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 43
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "784",
+              "quest": "vanquish the betrayers",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "791",
+              "quest": "carry your weight",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "830",
+              "quest": "The Admiral's Orders",
+              "description": "Chest on the roof"
+            },
+            {
+              "type": "note",
+              "description": "Die on purpose and res at spirit"
+            }
+          ],
+          "coords": {
+            "x": 58,
+            "y": 57
+          }
+        }
+      ]
     }
   ]
 }

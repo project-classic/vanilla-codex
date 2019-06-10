@@ -166,9 +166,11 @@ function Markers() {
                                         locations.push(location)
                                     }
                                 })
-                                markers.push({name: units[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
-                                markerNames.push(units[objective.id].name)
-                                colorIndex++
+                                if (!markerNames.includes(units[objective.id].name)) {
+                                    markers.push({name: units[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                    markerNames.push(units[objective.id].name)
+                                    colorIndex++
+                                }
                                 break
                             }
 
@@ -179,9 +181,11 @@ function Markers() {
                                         locations.push(location)
                                     }
                                 })
-                                markers.push({name: objects[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
-                                markerNames.push(objects[objective.id].name)
-                                colorIndex++
+                                if (!markerNames.includes(objects[objective.id].name)) {
+                                    markers.push({name: objects[objective.id].name, locations: locations, color: colors[colorIndex], visible: true})
+                                    markerNames.push(objects[objective.id].name)
+                                    colorIndex++
+                                }
                                 break
                             }
 
@@ -194,9 +198,11 @@ function Markers() {
                                                 locations.push(location)
                                             }
                                         })
-                                        markers.push({name: units[npc.toString()].name, locations: locations, color: colors[colorIndex], visible: true})
-                                        markerNames.push(units[npc.toString()].name)
-                                        colorIndex++
+                                        if (!markerNames.includes(units[npc.toString()].name)) {
+                                            markers.push({name: units[npc.toString()].name, locations: locations, color: colors[colorIndex], visible: true})
+                                            markerNames.push(units[npc.toString()].name)
+                                            colorIndex++
+                                        }
                                     })
                                 }
 
@@ -208,9 +214,11 @@ function Markers() {
                                                 locations.push(location)
                                             }
                                         })
-                                        markers.push({name: objects[object].name, locations: locations, color: colors[colorIndex], visible: true})
-                                        markerNames.push(objects[object].name)
-                                        colorIndex++
+                                        if (!markerNames.includes(objects[object].name)) {
+                                            markers.push({name: objects[object].name, locations: locations, color: colors[colorIndex], visible: true})
+                                            markerNames.push(objects[object].name)
+                                            colorIndex++
+                                        }
                                     })
                                 }
                                 break

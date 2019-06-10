@@ -128,6 +128,9 @@ function Map() {
         let bigY = 0
         let scale = 1
 
+        let newX = newCenter.x
+        let newY = newCenter.y
+
         if (state.currentMarkers !== null) {
             state.currentMarkers.forEach(marker => {
                 marker.locations.forEach(location => {
@@ -135,7 +138,8 @@ function Map() {
                         bigX = location.coords.x
                     } else if (location.coords.x < smallX) {
                         smallX = location.coords.x
-                    } else if (location.coords.y > bigY) {
+                    }
+                    if (location.coords.y > bigY) {
                         bigY = location.coords.y
                     } else if (location.coords.y < smallY) {
                         smallY = location.coords.y
@@ -145,12 +149,16 @@ function Map() {
 
             let xDiff = (bigX - smallX) * 0.01 * 1440
             let yDiff = (bigY - smallY) * 0.01 * 960
-            console.log(xDiff, yDiff, bigY, smallY)
+
             while ((scale * xDiff < 1440) && (scale * yDiff < 960) && scale < 5) {
                 scale += 0.25
             }
             scale -= 1
+
+            newX = (bigX + smallX) / 2
+            newY = (bigY + smallY) / 2
         }
+
         setLocal({
             ...local,
             lastPosition: position,
@@ -158,6 +166,7 @@ function Map() {
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
                 transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
+                // transform: 'scale(' + scale + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
                 // left: position.x + 'px',
                 // top: position.y + 'px'
             }
