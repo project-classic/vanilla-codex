@@ -36,7 +36,7 @@
               "type": "quest",
               "id": "788",
               "quest": "cutting teeth",
-              "description": "Don't need to complete now"
+              "description": "Don't need to complete now because daniel is some little biiiiitch niggzz asdasdasdasda bonjour test"
             },
             {
               "type": "accept",
@@ -68,7 +68,7 @@
     },
     {
       "zone": "14",
-      "experience": 0,
+      "experience": 2.3,
       "waypoints": [
         {
           "objectives": [
@@ -192,7 +192,7 @@
     },
     {
       "zone": "14",
-      "experience": 0,
+      "experience": 4.6,
       "waypoints": [
         {
           "objectives": [
@@ -494,6 +494,152 @@
           "coords": {
             "x": 58,
             "y": 57
+          }
+        }
+      ]
+    },
+    {
+      "zone": "85",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "365",
+              "quest": "Fields of Grief",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Die and res at brill"
+            }
+          ],
+          "coords": {
+            "x": 45,
+            "y": 55
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "404",
+              "quest": "a putrid task",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "367",
+              "quest": "A New Plague",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "383",
+              "quest": "vital intelligence",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "370",
+              "quest": "At War With The Scarlet Crusade",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "398",
+              "quest": "wanted: maggot eye",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "374",
+              "quest": "proof of demise",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "358",
+              "quest": "graverobbers",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "8",
+              "quest": "A Rogue's Deal",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Set hearthstone"
+            },
+            {
+              "type": "note",
+              "description": "Sell trash"
+            }
+          ],
+          "coords": {
+            "x": 58,
+            "y": 52
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "404",
+              "quest": "a putrid task",
+              "description": "Grind darkhounds on the way"
+            },
+            {
+              "type": "note",
+              "id": "",
+              "quest": "",
+              "description": "Grind darkhounds on the way"
+            }
+          ],
+          "coords": {
+            "x": 53,
+            "y": 57
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "358",
+              "quest": "graverobbers",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 56,
+            "y": 42
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "367",
+              "quest": "A New Plague",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "398",
+              "quest": "wanted: maggot eye",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Die and res at brill"
+            }
+          ],
+          "coords": {
+            "x": 62,
+            "y": 36
           }
         }
       ]

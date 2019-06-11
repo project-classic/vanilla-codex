@@ -93,23 +93,6 @@ function Map() {
         //     })
         // }
     }
-
-    function getCenterFunky(waypoints) {
-        let x = 0
-        let y = 0
-        let waypointNumber = 0
-        waypoints.forEach(waypoint => {
-            x += (waypoint.coords.x)
-            y += (waypoint.coords.y)
-            waypointNumber++
-        })
-
-        return {
-            x: x / waypointNumber,
-            y: y / waypointNumber
-        }
-    }
-
     //ON INITIAL LOAD
     useEffect(() => {
         updateResolution()
@@ -121,12 +104,10 @@ function Map() {
         const resolution = dimensions()
         const position = getCenter({waypoints: waypoints, resolution: resolution})
 
-        const newCenter = getCenterFunky(waypoints)
         let smallX = 100
         let bigX = 0
         let smallY = 100
         let bigY = 0
-        let scale = 1
 
         if (state.currentMarkers !== null) {
             waypoints.forEach(waypoint => {
@@ -160,10 +141,8 @@ function Map() {
                 })
             })
         }
-        console.log(smallX, bigX, smallY, bigY)
         let newX = (smallX + bigX) / 2
         let newY = (smallY + bigY) / 2
-        console.log(newX, newY)
         let width = resolution.width
         let height = resolution.height
         let xDiff = (bigX * 0.01 * 1440) - (smallX * 0.01 * 1440)
@@ -210,7 +189,7 @@ function Map() {
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
                 // transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
-                transform: 'scale(' + scaleZ * 0.75 + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
+                transform: 'scale(' + scaleZ * 0.65 + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
                 // left: position.x + 'px',
                 // top: position.y + 'px'
             }

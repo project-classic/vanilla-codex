@@ -16,8 +16,8 @@ function Level() {
 
         setLocal({
             level: level,
-            style: {
-                style: level.split('.')[1] + '%'
+            width: {
+                width: level.split('.')[1] + '%'
             }
         })
     }, [state.currentStep, state.route])
@@ -26,7 +26,7 @@ function Level() {
         <div id={'level'}>
             <div id={'level-title'} className={'level-text'}>Level</div>
             <div id={'level-value'} className={'level-text'}>{local.level}</div>
-            <div id={'level-bar'}/>
+            <div id={'level-bar'} style={local.width}/>
         </div>
     )
 }

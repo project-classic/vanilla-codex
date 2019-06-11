@@ -3,10 +3,22 @@ import React, {useContext, useState, useEffect} from 'react'
 import '../../../interface/css/guide/panel/quests.css'
 import {Context} from "../../context";
 
-function Quests() {
-    const {state, dispatch} = useContext(Context)
+function Quests({visible}) {
+    const {state} = useContext(Context)
 
-    const [local, setLocal] = useState({})
+    const [local, setLocal] = useState({
+        content: null,
+        style: null
+    })
+
+    useEffect(() => {
+        setLocal({
+            ...local,
+            style: {
+                display: visible ? 'grid' : 'none'
+            }
+        })
+    }, [visible])
 
     useEffect(() => {
         buildContent(state.route.path[state.currentStep].waypoints)
@@ -24,7 +36,7 @@ function Quests() {
     }
 
     return (
-        <div id={'quests'}>
+        <div id={'quests'} style={local.style}>
             {local.content}
         </div>
     )

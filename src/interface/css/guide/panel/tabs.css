@@ -10,3 +10,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.current-tab {
+    background: rgba(78, 255, 246, 0.089);
+    pointer-events: none;
+    text-decoration: underline;
+}

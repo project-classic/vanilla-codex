@@ -1,0 +1,36 @@
+#quest-log {
+    background-color: #242424;
+    grid-row: 4;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-row-gap: 5px;
+    padding: 5px;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.quest-log-title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: left;
+    background: rgba(255, 255, 255, 0.130);
+    padding-left: 5px;
+}
+
+.quest-log-title-progress {
+    grid-column: 2;
+    justify-self: right;
+    padding-right: 5px;
+}
+
+.quest-log-item {
+    display: flex;
+    background: rgba(226, 171, 108, 0.486);
+    align-items: center;
+    justify-content: left;
+    padding-left: 5px;
+}

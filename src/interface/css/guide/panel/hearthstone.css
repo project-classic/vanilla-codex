@@ -12,6 +12,7 @@
     justify-self: left;
     color: #F1F1F1;
     font: 16px 'Open Sans', Verdana;
+    text-transform: capitalize;
 }
 
 #hearthstone-title {
