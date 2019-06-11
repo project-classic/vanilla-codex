@@ -39,7 +39,7 @@ function reducer(state, action) {
             if (state.selectedWaypointIndex + 1 < state.route.path[state.currentStep].waypoints.length) {
                 newIndex = state.selectedWaypointIndex + 1
                 newWaypoint = state.route.path[state.currentStep].waypoints[newIndex]
-            } else if (state.selectedWaypointIndex + 1 >= state.route.path[state.currentStep].waypoints.length) {
+            } else if (state.selectedWaypointIndex + 1 >= state.route.path[state.currentStep].waypoints.length && state.currentStep + 1 < state.route.path.length) {
                 newIndex = 0
                 newCurrentStep = state.currentStep + 1
                 newWaypoint = state.route.path[newCurrentStep].waypoints[newIndex]
@@ -59,7 +59,7 @@ function reducer(state, action) {
             if (state.selectedWaypointIndex > 0) {
                 newIndex = state.selectedWaypointIndex - 1
                 newWaypoint = state.route.path[state.currentStep].waypoints[newIndex]
-            } else {
+            } else if (state.currentStep - 1 >= 0) {
                 newCurrentStep = state.currentStep - 1
                 newIndex = state.route.path[newCurrentStep].waypoints.length - 1
                 newWaypoint = state.route.path[newCurrentStep].waypoints[newIndex]
