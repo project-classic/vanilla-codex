@@ -7,7 +7,6 @@ function Step() {
     return (
         <React.Fragment>
             <Lines/>
-            <Markers/>
             <foreignObject width={'100%'} height={'100%'}>
                 <Waypoints/>
             </foreignObject>

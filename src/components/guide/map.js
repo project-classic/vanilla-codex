@@ -72,26 +72,26 @@ function Map() {
     }
 
     function updateMapPosition(event) {
-        // event.persist();
-        // if (local.movementEnabled) {
-        //     const position = getPosition({
-        //         event: event,
-        //         lastEvent: local.lastEvent,
-        //         lastPosition: local.lastPosition,
-        //         resolution: local.resolution
-        //     });
-        //
-        //     setLocal({
-        //         ...local,
-        //         lastEvent: event,
-        //         lastPosition: position,
-        //         style: {
-        //             ...local.style,
-        //             left: position.x + 'px',
-        //             top: position.y + 'px'
-        //         }
-        //     })
-        // }
+        event.persist();
+        if (local.movementEnabled) {
+            const position = getPosition({
+                event: event,
+                lastEvent: local.lastEvent,
+                lastPosition: local.lastPosition,
+                resolution: local.resolution
+            });
+
+            setLocal({
+                ...local,
+                lastEvent: event,
+                lastPosition: position,
+                style: {
+                    ...local.style,
+                    left: position.x + 'px',
+                    top: position.y + 'px'
+                }
+            })
+        }
     }
     //ON INITIAL LOAD
     useEffect(() => {
@@ -104,94 +104,14 @@ function Map() {
         const resolution = dimensions()
         const position = getCenter({waypoints: waypoints, resolution: resolution})
 
-        let smallX = 100
-        let bigX = 0
-        let smallY = 100
-        let bigY = 0
-
-        if (state.currentMarkers !== null) {
-            waypoints.forEach(waypoint => {
-                if (waypoint.coords.x > bigX) {
-                    bigX = waypoint.coords.x
-                }
-                if (waypoint.coords.x < smallX) {
-                    smallX = waypoint.coords.y
-                }
-                if (waypoint.coords.y > bigY) {
-                    bigY = waypoint.coords.y
-                }
-                if (waypoint.coords.y < smallY) {
-                    smallY = waypoint.coords.y
-                }
-            })
-            state.currentMarkers.forEach(marker => {
-                marker.locations.forEach(location => {
-                    if (location.coords.x > bigX) {
-                        bigX = location.coords.x
-                    }
-                    if (location.coords.x < smallX) {
-                        smallX = location.coords.x
-                    }
-                    if (location.coords.y > bigY) {
-                        bigY = location.coords.y
-                    }
-                    if (location.coords.y < smallY) {
-                        smallY = location.coords.y
-                    }
-                })
-            })
-        }
-        let newX = (smallX + bigX) / 2
-        let newY = (smallY + bigY) / 2
-        let width = resolution.width
-        let height = resolution.height
-        let xDiff = (bigX * 0.01 * 1440) - (smallX * 0.01 * 1440)
-        let yDiff = (bigY * 0.01 * 960) - (smallY * 0.01 * 960)
-        let scaleZ = 0
-        if (xDiff > yDiff) {
-            scaleZ = width / xDiff
-        } else {
-            scaleZ = height / yDiff
-        }
-        scaleZ = scaleZ > 5 ? 5 : scaleZ
-
-        // if (state.currentMarkers !== null) {
-        //     state.currentMarkers.forEach(marker => {
-        //         marker.locations.forEach(location => {
-        //             if (location.coords.x > bigX) {
-        //                 bigX = location.coords.x
-        //             } else if (location.coords.x < smallX) {
-        //                 smallX = location.coords.x
-        //             }
-        //             if (location.coords.y > bigY) {
-        //                 bigY = location.coords.y
-        //             } else if (location.coords.y < smallY) {
-        //                 smallY = location.coords.y
-        //             }
-        //         })
-        //     })
-        //
-        //     let xDiff = (bigX - smallX) * 0.01 * 1440
-        //     let yDiff = (bigY - smallY) * 0.01 * 960
-        //
-        //     while ((scale * xDiff < 1440) && (scale * yDiff < 960) && scale < 5) {
-        //         scale += 0.25
-        //     }
-        //     scale -= 1
-        //
-        //     newX = (bigX + smallX) / 2
-        //     newY = (bigY + smallY) / 2
-
         setLocal({
             ...local,
             lastPosition: position,
             resolution: resolution,
             style: {
                 backgroundImage: 'url(' + require('../../interface/images/maps/' + zones[state.route.path[state.currentStep].zone] + '.jpg') + ')',
-                // transform: 'scale(' + scale + ') translate(' + (50 - newCenter.x) + '%, ' + (50 - newCenter.y) + '%)',
-                transform: 'scale(' + scaleZ * 0.65 + ') translate(' + (50 - newX) + '%, ' + (50 - newY) + '%)',
-                // left: position.x + 'px',
-                // top: position.y + 'px'
+                left: position.x + 'px',
+                top: position.y + 'px'
             }
         })
     }, [local.resolution, state.route.path, state.currentStep, state.profiles, state.loaded, state.currentMarkers]);
@@ -212,7 +132,6 @@ function Map() {
             >
                 <Step/>
             </svg>
-            <Legend/>
             <Previous visible={local.showChangeStep}/>
             <Next visible={local.showChangeStep}/>
         </div>

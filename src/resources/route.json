@@ -499,122 +499,338 @@
       ]
     },
     {
-      "zone": "85",
+      "zone": "14",
       "experience": 0,
       "waypoints": [
         {
           "objectives": [
             {
-              "type": "accept",
-              "id": "365",
-              "quest": "Fields of Grief",
-              "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Die and res at brill"
-            }
-          ],
-          "coords": {
-            "x": 45,
-            "y": 55
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "accept",
-              "id": "404",
-              "quest": "a putrid task",
+              "type": "complete",
+              "id": "784",
+              "quest": "vanquish the betrayers",
               "description": ""
             },
             {
               "type": "accept",
-              "id": "367",
-              "quest": "A New Plague",
+              "id": "825",
+              "quest": "from the wreckage....",
               "description": ""
             },
             {
               "type": "complete",
-              "id": "383",
-              "quest": "vital intelligence",
+              "id": "830",
+              "quest": "The Admiral's Orders",
               "description": ""
             },
             {
               "type": "accept",
-              "id": "370",
-              "quest": "At War With The Scarlet Crusade",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "id": "398",
-              "quest": "wanted: maggot eye",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "id": "374",
-              "quest": "proof of demise",
-              "description": ""
-            },
-            {
-              "type": "accept",
-              "id": "358",
-              "quest": "graverobbers",
+              "id": "831",
+              "quest": "The Admiral's Orders",
               "description": ""
             },
             {
               "type": "complete",
-              "id": "8",
-              "quest": "A Rogue's Deal",
+              "id": "791",
+              "quest": "carry your weight",
               "description": ""
-            },
-            {
-              "type": "note",
-              "description": "Set hearthstone"
-            },
-            {
-              "type": "note",
-              "description": "Sell trash"
-            }
-          ],
-          "coords": {
-            "x": 58,
-            "y": 52
-          }
-        },
-        {
-          "objectives": [
-            {
-              "type": "quest",
-              "id": "404",
-              "quest": "a putrid task",
-              "description": "Grind darkhounds on the way"
-            },
-            {
-              "type": "note",
-              "id": "",
-              "quest": "",
-              "description": "Grind darkhounds on the way"
             }
           ],
           "coords": {
             "x": 53,
-            "y": 57
+            "y": 43
           }
         },
         {
           "objectives": [
             {
               "type": "quest",
-              "id": "358",
-              "quest": "graverobbers",
+              "id": "818",
+              "quest": "a solvent spirit",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "825",
+              "quest": "from the wreckage....",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 60,
+            "y": 50
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "837",
+              "quest": "encroachment",
+              "description": "Only do Quilboars and Scouts"
+            },
+            {
+              "type": "note",
+              "description": "Make sure you're 3 bars from lvl 8"
+            }
+          ],
+          "coords": {
+            "x": 49,
+            "y": 48
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "825",
+              "quest": "from the wreckage....",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Sell trash and train spells"
+            }
+          ],
+          "coords": {
+            "x": 53,
+            "y": 43
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "786",
+              "quest": "thwarting kolkar aggression",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 50,
+            "y": 79
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "786",
+              "quest": "thwarting kolkar aggression",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "818",
+              "quest": "a solvent spirit",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 55,
+            "y": 73
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "815",
+              "quest": "break a few eggs",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "817",
+              "quest": "practical prey",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "826",
+              "quest": "zalazane",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "808",
+              "quest": "minshina's skull",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Die and res at spirit"
+            }
+          ],
+          "coords": {
+            "x": 64,
+            "y": 81
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "808",
+              "quest": "minshina's skull",
+              "description": "KEEP the quest reward!"
+            },
+            {
+              "type": "complete",
+              "id": "826",
+              "quest": "zalazane",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "817",
+              "quest": "practical prey",
               "description": ""
             }
           ],
           "coords": {
             "x": 56,
+            "y": 73
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "815",
+              "quest": "break a few eggs",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 53,
+            "y": 43
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "837",
+              "quest": "encroachment",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 42,
+            "y": 42
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "816",
+              "quest": "lost but not forgotten",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 43,
+            "y": 32
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "834",
+              "quest": "winds in the desert",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 46,
+            "y": 22
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "834",
+              "quest": "winds in the desert",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 51,
+            "y": 25
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "834",
+              "quest": "winds in the desert",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "835",
+              "quest": "securing the lines",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Grind until 1.5 bars from lvl 10"
+            }
+          ],
+          "coords": {
+            "x": 46,
+            "y": 22
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "837",
+              "quest": "encroachment",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "1505",
+              "quest": "veteran uzzek",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Sell trash and learn first aid if not done"
+            },
+            {
+              "type": "accept",
+              "id": "840",
+              "quest": "conscript of the horde",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 52,
             "y": 42
           }
         },
@@ -622,24 +838,656 @@
           "objectives": [
             {
               "type": "quest",
-              "id": "367",
-              "quest": "A New Plague",
+              "id": "816",
+              "quest": "lost but not forgotten",
+              "description": "Don't need to finish"
+            }
+          ],
+          "coords": {
+            "x": 36,
+            "y": 43
+          }
+        }
+      ]
+    },
+    {
+      "zone": "17",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "840",
+              "quest": "conscript of the horde",
               "description": ""
             },
             {
-              "type": "quest",
-              "id": "398",
-              "quest": "wanted: maggot eye",
+              "type": "accept",
+              "id": "842",
+              "quest": "crossroads conscription",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "1505",
+              "quest": "veteran uzzek",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "1498",
+              "quest": "path of defense",
               "description": ""
             },
             {
               "type": "note",
-              "description": "Die and res at brill"
+              "description": "Back to durotar"
+            }
+          ],
+          "coords": {
+            "x": 59,
+            "y": 21
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "816",
+              "quest": "lost but not forgotten",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 35,
+            "y": 43
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "816",
+              "quest": "lost but not forgotten",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 43,
+            "y": 32
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "1498",
+              "quest": "path of defense",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "806",
+              "quest": "dark storms",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Back to Barrens"
+            }
+          ],
+          "coords": {
+            "x": 40,
+            "y": 25
+          }
+        }
+      ]
+    },
+    {
+      "zone": "17",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "1498",
+              "quest": "path of defense",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "1502",
+              "quest": "thun'grim firegaze",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 59,
+            "y": 21
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "1502",
+              "quest": "thun'grim firegaze",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "1503",
+              "quest": "forged steel",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 57,
+            "y": 29
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "1503",
+              "quest": "forged steel",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 55,
+            "y": 26
+          }
+        }
+      ]
+    },
+    {
+      "zone": "17",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "1503",
+              "quest": "forged steel",
+              "description": "Get axe"
+            }
+          ],
+          "coords": {
+            "x": 57,
+            "y": 29
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "842",
+              "quest": "crossroads conscription",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "6365",
+              "quest": "meats to orgrimmar",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "6365",
+              "quest": "meats to orgrimmar",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "6384",
+              "quest": "ride to orgrimmar",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Use hearthstone"
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 31
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "806",
+              "quest": "dark storms",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "828",
+              "quest": "margoz",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Buy Recipe: Scorpid Surprise"
+            }
+          ],
+          "coords": {
+            "x": 53,
+            "y": 42
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "835",
+              "quest": "securing the lines",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 51,
+            "y": 24
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "835",
+              "quest": "securing the lines",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 46,
+            "y": 22
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "812",
+              "quest": "need for a cure",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Go to Orgrimmar"
+            }
+          ],
+          "coords": {
+            "x": 42,
+            "y": 16
+          }
+        }
+      ]
+    },
+    {
+      "zone": "1637",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "6384",
+              "quest": "ride to orgrimmar",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "6385",
+              "quest": "doras the wind rider master",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 71
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "6385",
+              "quest": "doras the wind rider master",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "6386",
+              "quest": "return to the crossroads.",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 46,
+            "y": 61
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "5726",
+              "quest": "Hidden Enemies",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "831",
+              "quest": "The Admiral's Orders",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 40,
+            "y": 37
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "accept",
+              "id": "813",
+              "quest": "finding the antidote",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 47,
+            "y": 52
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "note",
+              "description": "Get skinning + skinning knife"
             }
           ],
           "coords": {
             "x": 62,
-            "y": 36
+            "y": 45
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "note",
+              "description": "Get cooking + skill up"
+            },
+            {
+              "type": "note",
+              "description": "Leave Orgrimmar"
+            }
+          ],
+          "coords": {
+            "x": 58,
+            "y": 53
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "828",
+              "quest": "margoz",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "827",
+              "quest": "skull rock",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "813",
+              "quest": "finding the antidote",
+              "description": "Don't need to finish"
+            }
+          ],
+          "coords": {
+            "x": 55,
+            "y": 18
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "827",
+              "quest": "skull rock",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "5726",
+              "quest": "Hidden Enemies",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "832",
+              "quest": "burning shadows",
+              "description": "Use Faintly Glowing Skull from earlier quest"
+            },
+            {
+              "type": "note",
+              "description": "Grind until first aid 40"
+            }
+          ],
+          "coords": {
+            "x": 54,
+            "y": 12
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "827",
+              "quest": "skull rock",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "829",
+              "quest": "neeru fireblade",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 55,
+            "y": 18
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "quest",
+              "id": "813",
+              "quest": "finding the antidote",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Go to Orgrimmar"
+            }
+          ],
+          "coords": {
+            "x": 52,
+            "y": 15
+          }
+        }
+      ]
+    },
+    {
+      "zone": "1637",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "5726",
+              "quest": "Hidden Enemies",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "5727",
+              "quest": "Hidden Enemies",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 38,
+            "y": 37
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "813",
+              "quest": "finding the antidote",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "829",
+              "quest": "neeru fireblade",
+              "description": ""
+            },
+            {
+              "type": "accept",
+              "id": "809",
+              "quest": "ak'zeloth",
+              "description": ""
+            },
+            {
+              "type": "complete",
+              "id": "832",
+              "quest": "burning shadows",
+              "description": ""
+            },
+            {
+              "type": "quest",
+              "id": "5727",
+              "quest": "Hidden Enemies",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 46,
+            "y": 53
+          }
+        }
+      ]
+    },
+    {
+      "zone": "1637",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "5727",
+              "quest": "Hidden Enemies",
+              "description": ""
+            },
+            {
+              "type": "note",
+              "description": "Destroy Lieutenant's Insignia"
+            }
+          ],
+          "coords": {
+            "x": 38,
+            "y": 37
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "note",
+              "description": "If you have extra cash, you can learn Thrown and Staves"
+            },
+            {
+              "type": "note",
+              "description": "Leave Orgrimmar"
+            }
+          ],
+          "coords": {
+            "x": 78,
+            "y": 21
+          }
+        }
+      ]
+    },
+    {
+      "zone": "14",
+      "experience": 0,
+      "waypoints": [
+        {
+          "objectives": [
+            {
+              "type": "complete",
+              "id": "812",
+              "quest": "need for a cure",
+              "description": ""
+            }
+          ],
+          "coords": {
+            "x": 41,
+            "y": 16
+          }
+        },
+        {
+          "objectives": [
+            {
+              "type": "note",
+              "description": "Go take zeppelin to Undercity"
+            }
+          ],
+          "coords": {
+            "x": 50,
+            "y": 15
           }
         }
       ]

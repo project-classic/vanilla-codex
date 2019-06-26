@@ -12543,7 +12543,21 @@
     "end": {
       "id": 3140,
       "type": "npc"
-    }
+    },
+    "objectives": [
+      {
+        "id": 3189,
+        "type": "object"
+      },
+      {
+        "id": 3190,
+        "type": "object"
+      },
+      {
+        "id": 3192,
+        "type": "object"
+      }
+    ]
   },
   "787": {
     "name": "The New Horde",
@@ -41454,7 +41468,13 @@
     "end": {
       "id": 4949,
       "type": "npc"
-    }
+    },
+    "objectives": [
+      {
+        "id": 4949,
+        "type": "npc"
+      }
+    ]
   },
   "5728": {
     "name": "Hidden Enemies",
