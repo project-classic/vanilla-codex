@@ -1,8 +1,8 @@
 import {sleep} from './util'
 
-function getProfiles() {
-    const PROFILES_KEY = 'profiles';
+const PROFILES_KEY = 'profiles';
 
+function getProfiles() {
     return new Promise((resolve, reject) => {
         let storage = JSON.parse(localStorage.getItem(PROFILES_KEY));
 
@@ -15,6 +15,13 @@ function getProfiles() {
             resolve(new Map(storage.profiles))
         })
     })
+}
+
+function update(data) {
+    const stringified = JSON.stringify({PROFILES_KEY: Array.from(data)})
+    localStorage.setItem(PROFILES_KEY, stringified)
+
+    return data
 }
 
 export {

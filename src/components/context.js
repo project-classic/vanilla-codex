@@ -1,6 +1,5 @@
 import React, {createContext, useReducer} from "react";
 // import { update, change } from "./funcs/storage";
-import Prompt from './prompt';
 import {getProfiles} from "../utils/storage";
 import {buildRoute} from "../utils/route-builder";
 
@@ -15,6 +14,7 @@ function reducer(state, action) {
         case 'updateCurrentStep': {
             let selectedWaypoint = state.route.path[action.payload].waypoints[0]
             let selectedWaypointIndex = 0
+
             return {
                 ...state,
                 currentStep: action.payload,
@@ -72,20 +72,6 @@ function reducer(state, action) {
             }
         }
 
-        case 'updateMarkers': {
-            return {
-                ...state,
-                currentMarkers: action.payload
-            }
-        }
-
-        case 'toggleMarker': {
-            return {
-                ...state,
-                markersModified: !state.markersModified
-            }
-        }
-
         // LOAD PROFILE
         case 'load': {
             return {
@@ -94,57 +80,11 @@ function reducer(state, action) {
             }
         }
 
-        // SHOW PROMPT WITH APPROPARIATE CONTENT
-        case 'show-prompt': {
-            return {
-                ...state,
-                prompt: {
-                    visible: true,
-                    type: action.payload
-                }
-            }
-        }
-
-        // HIDE PROMPT
-        case 'hide-prompt': {
-            return {
-                ...state,
-                prompt: {
-                    ...state.prompt,
-                    visible: false
-                }
-            }
-        }
-
         // CURRENT LOADED PROFILE
         case 'loaded': {
             return {
                 ...state,
                 loaded: !state.loaded
-            }
-        }
-
-        // SHOW MESSAGE
-        case 'show-message': {
-            return {
-                ...state,
-                message: {
-                    visible: true,
-                    type: action.payload.type,
-                    value: action.payload.value
-                }
-            }
-        }
-
-        // HIDE MESSAGE
-        case 'hide-message': {
-            return {
-                ...state,
-                message: {
-                    visible: false,
-                    type: undefined,
-                    value: undefined
-                }
             }
         }
 
@@ -169,24 +109,12 @@ function Provider({children}) {
         currentStep: 0,
         selectedWaypoint: buildRoute().path[0].waypoints[0],
         selectedWaypointIndex: 0,
-        currentMarkers: null,
-        markersModified: false,
         profiles: profiles,
-        prompt: {
-            visible: false,
-            type: 'loading'
-        },
         loaded: null,
-        message: {
-            visible: false,
-            type: undefined,
-            value: undefined
-        }
     });
 
     return (
         <Context.Provider value={{state, dispatch}}>
-            <Prompt/>
             <div id={'container'}>
                 {children}
             </div>

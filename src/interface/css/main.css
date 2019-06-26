@@ -23,5 +23,5 @@ a:link, a:visited, a:hover {
     display: grid;
     min-height: 100vh;
     min-width: 100vw;
-    grid-template-rows: 35px 1fr;
+    /*grid-template-rows: 35px 1fr;*/
 }

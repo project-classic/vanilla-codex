@@ -4,7 +4,6 @@ import EventListener from "react-event-listener";
 
 import '../interface/css/guide.css'
 
-import Message from "./guide/message";
 import Map from "./guide/map";
 import Panel from "./guide/panel";
 
@@ -30,7 +29,6 @@ function Guide() {
         return (
             <div id={'guide'}>
                 <EventListener target={document} onKeyDown={keyEvent}/>
-                <Message/>
                 <Map/>
                 <Panel/>
             </div>
