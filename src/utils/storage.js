@@ -1,29 +1,30 @@
 import {sleep} from './util'
 
-const PROFILES_KEY = 'profiles';
+const PROFILE_KEY = 'profile';
 
-function getProfiles() {
+function getProfile() {
     return new Promise((resolve, reject) => {
-        let storage = JSON.parse(localStorage.getItem(PROFILES_KEY));
+        let storage = JSON.parse(localStorage.getItem(PROFILE_KEY));
 
-        if (localStorage.getItem(PROFILES_KEY) === null) {
-            storage = {profiles: []};
-            localStorage.setItem(PROFILES_KEY, JSON.stringify(storage))
+        if (localStorage.getItem(PROFILE_KEY) === null) {
+            storage = {currentStep: 0};
+            localStorage.setItem(PROFILE_KEY, JSON.stringify(storage))
         }
 
         sleep(1000).then(() => {
-            resolve(new Map(storage.profiles))
+            resolve(storage.currentStep)
         })
     })
 }
 
 function update(data) {
-    const stringified = JSON.stringify({PROFILES_KEY: Array.from(data)})
-    localStorage.setItem(PROFILES_KEY, stringified)
+    const stringified = JSON.stringify({'currentStep': data})
+    localStorage.setItem(PROFILE_KEY, stringified)
 
     return data
 }
 
 export {
-    getProfiles
+    getProfile,
+    update
 }

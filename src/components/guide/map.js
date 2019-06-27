@@ -29,11 +29,6 @@ function Map() {
             ...local,
             resolution: dimensions()
         });
-
-        dispatch({
-            type: 'loaded',
-            payload: true
-        })
     }
 
     function enableChangeStep() {
@@ -96,7 +91,7 @@ function Map() {
     //ON INITIAL LOAD
     useEffect(() => {
         updateResolution()
-    }, [state.profiles]);
+    }, [state.profile]);
 
     // CHANGE POSITION
     useEffect(() => {

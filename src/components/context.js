@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from "react";
 // import { update, change } from "./funcs/storage";
-import {getProfiles} from "../utils/storage";
+import {getProfile, update} from "../utils/storage";
 import {buildRoute} from "../utils/route-builder";
 
 import '../interface/css/main.css'
@@ -15,6 +15,7 @@ function reducer(state, action) {
             let selectedWaypoint = state.route.path[action.payload].waypoints[0]
             let selectedWaypointIndex = 0
 
+            update(action.payload)
             return {
                 ...state,
                 currentStep: action.payload,
@@ -72,19 +73,11 @@ function reducer(state, action) {
             }
         }
 
-        // LOAD PROFILE
-        case 'load': {
-            return {
-                ...state,
-                ...action.payload
-            }
-        }
-
         // CURRENT LOADED PROFILE
         case 'loaded': {
             return {
                 ...state,
-                loaded: !state.loaded
+                loaded: true
             }
         }
 
@@ -98,19 +91,28 @@ function reducer(state, action) {
 
 // CONTEXT PROVIDER
 function Provider({children}) {
-    let profiles = null;
-
-    getProfiles().then(loadedProfiles => {
-        profiles = loadedProfiles
-    });
+    let currentStep = 0;
 
     const [state, dispatch] = useReducer(reducer, {
         route: buildRoute(),
         currentStep: 0,
-        selectedWaypoint: buildRoute().path[0].waypoints[0],
+        selectedWaypoint: buildRoute().path[currentStep].waypoints[0],
         selectedWaypointIndex: 0,
-        profiles: profiles,
         loaded: null,
+    });
+
+    getProfile().then(loadedProfile => {
+        currentStep = loadedProfile
+        if (!state.loaded) {
+            dispatch({
+                type: 'updateCurrentStep',
+                payload: loadedProfile
+            })
+
+            dispatch({
+                type: 'loaded'
+            })
+        }
     });
 
     return (
